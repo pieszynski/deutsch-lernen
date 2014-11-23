@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="root" ng-controller="mainCtrl as main">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>{{main.title}}</title>
+    </head>
+    <body>
+        <div class="titlebar">
+            {{main.title}}
+        </div>
+
+        <div class="content">
+
+            <div class="tapArea" ng-click="main.tap()">
+
+                <div class="quiz quiz-active">
+                    <div class="lowtext">Aktualne słówko:</div>
+                    <div class="activequestion" ng-bind-html="main.shown.text"></div>
+                    <div class="lowtext">Po niemiecku?</div>
+                    <div class="activeanswer" ng-bind-html="main.shown.info"></div>
+                </div>
+
+            </div>
+
+            <div ng-show="main.prev">
+
+                <div class="quiz quiz-previous">
+                    <div class="lowtext">Poprzednie słówko:</div>
+                    <div class="lowquestion" ng-bind-html="main.prev.text"></div>
+                    <div class="lowtext">Po niemiecku?</div>
+                    <div class="lowanswer" ng-bind-html="main.prev.info"></div>
+                </div>
+
+            </div>
+
+            <div class="tapNext" ng-click="main.tap()">
+                <span ng-bind="main.nextBtn"></span>
+                <span class="md md-chevron-right"></span>
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-touch.min.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>
+
+        <script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

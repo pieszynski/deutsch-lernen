@@ -1,0 +1,107 @@
+
+@font-face{
+    font-family:'Roboto-Regular';
+    src:url('../fonts/Roboto-Regular.ttf') format('truetype')
+}/*
+@font-face{
+    font-family:'RobotoDraft';
+    src:url('../fonts/R1.woff') format('woff')
+}
+@font-face{
+    font-family:'RobotoDraftBolder';
+    src:url('../fonts/R2.woff') format('woff')
+}
+html{font-size:13px;line-height:24px;font-family:'RobotoDraft','Roboto-Regular',Helvetica,Arial,sans-serif}
+*/
+
+html {
+    min-height: 100%;
+    line-height: 24px;
+    font-size: 13px;
+    font-family: 'RobotoDraft','Roboto-Regular',Helvetica,Arial,sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #ccc;
+}
+
+.hide {
+    display: none;
+}
+
+.titlebar {
+    font-size: 24px;
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+    background-color: #bf360c;
+    box-shadow: 0px 2px 5px #888;
+    position: fixed;
+    margin-top: 0px;
+    width: 100%;
+    top: 0px;
+}
+
+.content {
+    margin-top: 75px;
+}
+
+.tapArea {
+    cursor: pointer;
+}
+
+.tapNext {
+    font-size: 15px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 15px;
+    margin: 20px;
+    color: white;
+    background-color: #bf360c;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #888;
+    cursor: pointer;
+}
+
+.quiz {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 2px 2px #888;
+}
+
+.quiz-active {
+    background-color: white;
+}
+
+.quiz-previous {
+    background-color: #ddd;
+    color: #777;
+}
+
+.lowtext {
+    font-size: 15px;
+}
+
+.activequestion {
+    font-size: 25px;
+    margin: 5px 0 25px 0;
+    line-height: 32px;
+}
+
+.activeanswer {
+    font-size: 25px;
+    line-height: 32px;
+}
+
+.lowquestion {
+    font-size: 20px;
+    margin: 5px 0 25px 0;
+}
+
+.lowanswer {
+    font-size: 20px;
+}
