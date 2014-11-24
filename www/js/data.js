@@ -4,10 +4,10 @@ var TestData = [
 ];
 
 var Data = [
-    {pl: 'zrywać / odrywać', de: 'abreißen > riss ab > hat abgerissen'},
+    {pl: 'burzyć / niszczyć / zrywać / odrywać', de: 'abreißen > riss ab > hat abgerissen'},
     {pl: 'przypiekać', de: 'anbraten > briet an > hat angebraten'},
     {pl: 'zaczynać', de: 'anfangen > fing an > hat angefangen'},
-    {pl: 'zakończyć / decydować / uchwalać', de: 'beschließen > beschloss > hat beschlossen'},
+    {pl: 'postanowić / zakończyć / decydować / uchwalać', de: 'beschließen > beschloss > hat beschlossen'},
     {pl: 'naradzać / komentować / omawiać', de: 'besprechen > besprach > hat besprochen'},
     {pl: 'zdać / przetrwać / istnieć', de: 'bestehen > bestand > hat bestanden'},
     {pl: 'wynosić / zachowywać się', de: 'betragen > betrug > hat betragen'},
@@ -42,7 +42,7 @@ var Data = [
     {pl: 'lecieć / frunąć', de: 'fliegen > flog > ist geflogen'},
     {pl: 'płynąć / ciec', de: 'fließen > floss > ist geflossen'},
     {pl: 'dawać', de: 'geben > gab > hat gegeben'},
-    {pl: 'podobać się', de: 'gefallen > gefiel > ist gefallen'},
+    {pl: 'podobać się', de: 'gefallen > gefiel > hat gefallen'},
     {pl: 'iść / chodzić / wyruszać', de: 'gehen > ging > ist gegangen'},
     {pl: 'rozkoszować się / delektować / otrzymać', de: 'genießen > genoss > hat genossen'},
     {pl: 'wygrywać', de: 'gewinnen > gewann > hat gewonnen'},
