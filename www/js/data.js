@@ -3,7 +3,7 @@ var TestData = [
     {pl: 'naradzać / komentować / omawiać', de: 'besprechen > besprach > hat besprochen'}
 ];
 
-var Data = [
+var Data1of3 = [
     {pl: 'burzyć / niszczyć / zrywać / odrywać', de: 'abreißen > riss ab > hat abgerissen'},
     {pl: 'przypiekać', de: 'anbraten > briet an > hat angebraten'},
     {pl: 'zaczynać', de: 'anfangen > fing an > hat angefangen'},
@@ -47,4 +47,59 @@ var Data = [
     {pl: 'rozkoszować się / delektować / otrzymać', de: 'genießen > genoss > hat genossen'},
     {pl: 'wygrywać', de: 'gewinnen > gewann > hat gewonnen'},
     {pl: 'podlewać / wylewać', de: 'gießen > goss > hat gegossen'}
+]
+
+var Data = [
+    {pl: 'trzymać / zatrzymywać', de: 'halten > hielt > hat gehalten'},
+    {pl: 'wisieć / zwisać', de: 'hängen > hing > hat gehangen'},
+    {pl: 'podnosić / unosić / wydobywać', de: 'heben > hob > hat gehoben'},
+    {pl: 'nazywać się / znaczyć / brzmieć', de: 'heißen > heiß > hat geheißen'},
+    {pl: 'pomagać / przydawać się komuś', de: 'helfen > half > hat geholfen'},
+    {pl: 'znać / poznawać', de: 'kennen > kannte > hat gekannt'},
+    {pl: 'dzwonić / rozbrzmiewać', de: 'klingen > klang > hat geklungen'},
+    {pl: 'przychodzić / podchodzić', de: 'kommen > kam > ist gekommen'},
+    {pl: 'móc coś uczynić', de: 'können > konnte > hat gekonnt'},
+    {pl: 'pozwalać / dopuszczać / zostawić / zaprzestawać czegoś / ', de: 'lassen > ließ > hat gelassen'},
+    {pl: 'biec / pracować (o silniku) / chodzić (o zegarze)', de: 'laufen > lief > ist gelaufen'},
+    {pl: 'cierpieć / chorować', de: 'leiden > litt > hat gelitten'},
+    {pl: 'być przykro', de: 'leidtun > es tat ihr leid > hat ihr leidgetan'},
+    {pl: 'czytać', de: 'lesen > las > hat gelesen'},
+    {pl: 'leżeć / spoczywać', de: 'liegen > lag > hat gelegen'},
+    {pl: 'wybiegać / zaczynać biec', de: 'losrennen > rannte los > ist losgerannt'},
+    {pl: 'kłamać / podglądać / wyjrzeć', de: 'lügen > log > hat gelogen'},
+    {pl: 'lubić / woleć / życzyć sobie', de: 'mögen > mochte > hat gemocht'},
+    {pl: 'musieć', de: 'müssen > musste > hat gemusst'},
+    {pl: 'brać / wziąć / pozbawić kogoś czegoś', de: 'nehmen > nahm > hat genommen'},
+    {pl: 'nazywać / polecać', de: 'nennen > nannte > hat genannt'},
+    {pl: 'gwizdać', de: 'pfeifen > pfiff > hat gepfiffen'},
+    {pl: 'radzić / zgadywać / doradzać', de: 'raten > riet > hat geraten'},
+    {pl: 'jeździć konno', de: 'reiten / ritt / ist geritten'},
+    {pl: 'czuć / pachnieć / wąchać', de: 'riechen > roch > hat gerochen'},
+    {pl: 'dzwonić / wykrzykiwać', de: 'rufen > rief > hat gerufen'},
+    {pl: 'spać / nocować', de: 'schlafen > schlief > hat geschlafen'},
+    {pl: 'zamykać / kończyć', de: 'schließen > schloss > hat geschlossen'},
+    {pl: 'świecić / zdawać się', de: 'scheinen > schien > hat geschienen'},
+    {pl: 'prowadzić / pchać / przesuwać', de: 'schieben > schob > hat geschoben'},
+    {pl: 'strzelać / wystrzelić', de: 'schießen > schoss > hat geschossen'},
+    {pl: 'topić / topnieć', de: 'schmelzen > schmolz > ist geschmolzen'},
+    {pl: 'ciąć / kroić', de: 'schneiden > schnitt > hat geschnitten'},
+    {pl: 'pisać / zapisać', de: 'schreiben > schrieb > hat geschrieben'},
+    {pl: 'krzyczeć / wrzeszczeć', de: 'schreien > schrie > hat geschrien'},
+    {pl: 'milczeć', de: 'schweigen > schwieg > hat geschwiegen'},
+    {pl: 'pływać', de: 'schwimmen > schwamm > ist geschwommen'},
+    {pl: 'widzieć / oglądać', de: 'sehen > sah > gat gesehen'},
+    {pl: 'być', de: 'sein > war > ist gewesen'},
+    {pl: 'śpiewać', de: 'singen > sang > hat gesungen'},
+    {pl: 'tonąć / opadać', de: 'sinken > sank > ist gesunken'},
+    {pl: 'siedzieć', de: 'sitzen > saß > hat gesessen'},
+    {pl: 'prząść / bajdurzyć / ściemniać', de: 'spinnen > spann > hat gesponnen'},
+    {pl: 'rozmawiać', de: 'sprechen > sprach > hat gesprochen'},
+    {pl: 'skakać / przeskakiwać', de: 'springen > sprang > ist gesprungen'},
+    {pl: 'stać', de: 'stehen > stand > hat gestanden'},
+    {pl: 'kraść / wymigiwać się od', de: 'stehlen > stahl > hat gestohlen'},
+    {pl: 'wchodzić / wspinać się / wsiadać', de: 'steigen > stieg > ist gestiegen'},
+    {pl: 'umierać', de: 'sterben > starb > ist gestorben'},
+    {pl: 'malować / smarować (bułkę)', de: 'streichen > strich > hat gestrichen'},
+    {pl: 'sprzeczać / kłucić się', de: 'streiten > stritt > hat gestritten'},
+    {pl: 'nosić / dźwigać', de: 'tragen > trug > hat getragen'}
 ]
