@@ -19,7 +19,7 @@
 
             <div class="tapArea" ng-click="main.tap()">
 
-                <div class="quiz quiz-active">
+                <div class="tile quiz quiz-active">
                     <div class="lowtext">Aktualne słówko:</div>
                     <div class="activequestion" ng-bind-html="main.shown.text"></div>
                     <div class="lowtext">Po niemiecku?</div>
@@ -30,7 +30,7 @@
 
             <div ng-show="main.prev">
 
-                <div class="quiz quiz-previous">
+                <div class="tile quiz quiz-previous">
                     <div class="lowtext">Poprzednie słówko:</div>
                     <div class="lowquestion" ng-bind-html="main.prev.text"></div>
                     <div class="lowtext">Po niemiecku?</div>
@@ -49,11 +49,13 @@
 
         <script type="text/javascript" src="cordova.js"></script>
 
-        <script src="js/angular.min.js"></script>
+        <!--<script src="js/angular.min.js"></script>
         <script src="js/angular-touch.min.js"></script>
-        <script src="js/angular-sanitize.min.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>-->
 
-        <script type="text/javascript" src="js/data.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <!--<script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/index.js"></script> -->
+
+        <script type="text/javascript" src="js/built-app.js"></script>
     </body>
 </html>
