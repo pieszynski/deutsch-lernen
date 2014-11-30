@@ -1,2 +1,9 @@
 # platforms
 platforms
+
+# js builds
+www/js/build
+www/js/built-app.js
+
+# node files
+node_modules
