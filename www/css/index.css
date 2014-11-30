@@ -2,17 +2,7 @@
 @font-face{
     font-family:'Roboto-Regular';
     src:url('../fonts/Roboto-Regular.ttf') format('truetype')
-}/*
-@font-face{
-    font-family:'RobotoDraft';
-    src:url('../fonts/R1.woff') format('woff')
 }
-@font-face{
-    font-family:'RobotoDraftBolder';
-    src:url('../fonts/R2.woff') format('woff')
-}
-html{font-size:13px;line-height:24px;font-family:'RobotoDraft','Roboto-Regular',Helvetica,Arial,sans-serif}
-*/
 
 html {
     min-height: 100%;
@@ -67,10 +57,14 @@ body {
     cursor: pointer;
 }
 
-.quiz {
+.tile {
+    border-radius: 2px;
     margin: 10px;
     padding: 10px;
     box-shadow: 0px 2px 2px #888;
+}
+
+.quiz {
 }
 
 .quiz-active {
@@ -104,4 +98,15 @@ body {
 
 .lowanswer {
     font-size: 20px;
+}
+
+.notify {
+    background-color: #afa;
+}
+
+.notify .notify-dismiss {
+    position: relative;
+    float: right;
+    top: 0px;
+    right: 0px;
 }

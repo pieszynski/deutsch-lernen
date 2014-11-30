@@ -47,7 +47,7 @@ var Data1of3 = [
     {pl: 'rozkoszować się / delektować / otrzymać', de: 'genießen > genoss > hat genossen'},
     {pl: 'wygrywać', de: 'gewinnen > gewann > hat gewonnen'},
     {pl: 'podlewać / wylewać', de: 'gießen > goss > hat gegossen'}
-]
+];
 
 var Data = [
     {pl: 'trzymać / zatrzymywać', de: 'halten > hielt > hat gehalten'},
@@ -102,4 +102,4 @@ var Data = [
     {pl: 'malować / smarować (bułkę)', de: 'streichen > strich > hat gestrichen'},
     {pl: 'sprzeczać / kłucić się', de: 'streiten > stritt > hat gestritten'},
     {pl: 'nosić / dźwigać', de: 'tragen > trug > hat getragen'}
-]
+];
