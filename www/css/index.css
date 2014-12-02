@@ -24,7 +24,7 @@ body {
 
 .titlebar {
     font-size: 24px;
-    text-align: center;
+    /*text-align: center;*/
     color: white;
     background-color: #bf360c;
     box-shadow: 0px 2px 5px #888;
@@ -38,6 +38,8 @@ body {
 
 .titlebar .titlebar-content {
     margin: 0px 10px;
+    height: 26px;
+    margin-right: 40px;
 }
 
 .titlebar-content:before, .titlebar-content:after {
@@ -120,10 +122,18 @@ body {
 
 .title-text {
     float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .search-button {
     float: right;
+    width: 30px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0px;
 }
 
 .notify {

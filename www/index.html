@@ -12,10 +12,19 @@
     </head>
     <body>
         <div class="titlebar">
-            {{main.title}}
+            <div class="titlebar-content">
+                <!-- <div class="menu-button"><span class="md-menu"></span></div> -->
+                <div class="title-text">{{main.title}}</div>
+                <div class="search-button"><span class="md-search"></span></div>
+            </div>
         </div>
 
         <div class="content">
+
+            <!-- <div class="tile notify">
+                <div class="notify notify-dismiss"><span class="md-close md-2x"></span></div>
+                <div>To jest kawałek nowego i ciekawego powiadomienia, którego jeszcze nie można się pozbyć ;D</div>
+            </div> -->
 
             <div class="tapArea" ng-click="main.tap()">
 
