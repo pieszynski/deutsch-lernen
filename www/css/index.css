@@ -32,11 +32,12 @@ body {
     margin-top: 0px;
     width: 100%;
     top: 0px;
+    padding: 20px 0px;
+    width: 100%;
 }
 
 .titlebar .titlebar-content {
-    padding: 20px 10px;
-    width: 95%;
+    margin: 0px 10px;
 }
 
 .content {
