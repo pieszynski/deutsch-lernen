@@ -3,6 +3,23 @@
 
     var app = angular.module('root', ['ngSanitize', 'ngTouch']);
 
+    app.directive('afEnter', function () {
+
+        return function (scope, elem, attrs) {
+
+            elem.bind('keypress keydown', function (evt) {
+
+                if (13 === evt.which) {
+                    scope.$applyAsync(function () {
+                        scope.$eval(attrs.afEnter);
+                    });
+
+                    evt.preventDefault();
+                }
+            });
+        };
+    });
+
     app.controller('mainCtrl', ['$scope', function ($scope) {
 
         var self = this;
@@ -14,9 +31,17 @@
         self.title = 'Deutsch mit Spaß lernen';
         self.chevron = '<span class="md md-chevron-right"></span>';
 
+        self.searchValue = 'lalal';
+        self.searchResults = ['bubu'];
+
         self.shown = null;
         self.prev = null;
         self.nextBtn = self.btnTexts[0];
+
+        self.cl = function () {
+            console.log.apply(console, arguments);
+            return 'u';
+        }
 
         self.fillLearnData = function () {
 
@@ -67,6 +92,21 @@
 
             }
 
+        }
+
+        self.searchWord = function (keyword) {
+
+            /*self.searchResults = ['lalalalz'];
+
+            return;
+            if (!self.data)
+                return;
+
+            // ToDo: tymczasowo - wszystko
+            for (var idx = 0; idx < self.data.length; idx++) {
+
+                self.searchResults.push(self.data[idx].de);
+            }*/
         }
 
         self.tap();
