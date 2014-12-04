@@ -20,19 +20,18 @@
 
             <div class="titlebar-content">
                 <div class="title-text">
-                    <input class="text-input titlebar-text-input" type="text" af-enter="main.searchWord(main.searchValue)" ng-model="main.searchValue" />
+                    <input class="text-input titlebar-text-input" type="text" ng-change="main.searchWord(main.searchValue)" ng-model="main.searchValue" />
                 </div>
-                <div class="search-button" ng-click="main.searchWord(main.searchValue)"><span class="md-done"></span></div>
+                <div class="search-button" ng-click="main.searchWord(main.searchValue)"><span class="md-close"></span></div>
             </div>
         </div>
 
         <div class="content search-results">
 
             <div class="fixed-fill-scroll-container fix-content-top">
-                <div class="tile quiz quiz-active">
-                    <div class="activebig" >laufen</div>
+                <div class="tile quiz quiz-active" ng-repeat="sword in main.searchResults">
+                    <div class="activebig" >{{sword.de}}</div>
                 </div>
-                <div class="tile quiz quiz-active"><div class="activebig" >fliegen</div></div>
             </div>
 
         </div>
@@ -76,11 +75,12 @@
 
         <script type="text/javascript" src="cordova.js"></script>
 
-        <!--<script src="js/angular.min.js"></script>
+        <!--
+        <script src="js/angular.js"></script>
         <script src="js/angular-touch.min.js"></script>
-        <script src="js/angular-sanitize.min.js"></script>-->
+        <script src="js/angular-sanitize.min.js"></script>
 
-        <!--<script type="text/javascript" src="js/data.js"></script>
+        <script type="text/javascript" src="js/data.js"></script>
         <script type="text/javascript" src="js/index.js"></script> -->
 
         <script type="text/javascript" src="js/built-app.js"></script>
