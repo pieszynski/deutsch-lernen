@@ -31,8 +31,8 @@
         self.title = 'Deutsch mit Spaß lernen';
         self.chevron = '<span class="md md-chevron-right"></span>';
 
-        self.searchValue = 'lalal';
-        self.searchResults = ['bubu'];
+        self.searchValue = '';
+        self.searchResults = [];
 
         self.shown = null;
         self.prev = null;
@@ -96,17 +96,20 @@
 
         self.searchWord = function (keyword) {
 
-            /*self.searchResults = ['lalalalz'];
+            self.searchResults = [];
 
-            return;
             if (!self.data)
                 return;
 
             // ToDo: tymczasowo - wszystko
             for (var idx = 0; idx < self.data.length; idx++) {
 
-                self.searchResults.push(self.data[idx].de);
-            }*/
+                var delem = self.data[idx];
+
+                // tylko zaczynające się na daną frazę
+                if (0 === delem.de.indexOf(keyword))
+                    self.searchResults.push(delem);
+            }
         }
 
         self.tap();
@@ -121,4 +124,4 @@
     document.addEventListener('pause', function() {
     }, false);
 
-})(jQuery);
+})(window.jQuery);
