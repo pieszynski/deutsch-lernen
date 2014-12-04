@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                 dest : 'www/js/build/source.js'
             },
             vendors : {
-                src : ['www/js/jqlite.1.1.1.min.js','www/js/angular.min.js','www/js/angular-touch.min.js','www/js/angular-sanitize.min.js'],
+                src : ['www/js/angular.min.js','www/js/angular-touch.min.js','www/js/angular-sanitize.min.js'],
                 dest : 'www/js/build/vendors.min.js'
             },
             dev : {
