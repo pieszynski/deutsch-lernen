@@ -20,6 +20,17 @@
         };
     });
 
+    app.directive('afFocus', function () {
+
+        return function (scope, elem, attrs) {
+
+            elem.bind('click', function () {
+
+                $('#' + attrs.afFocus).focus();
+            })
+        }
+    })
+
     app.controller('mainCtrl', ['$scope', function ($scope) {
 
         var self = this;
@@ -31,6 +42,7 @@
         self.title = 'Deutsch mit Spaß lernen';
         self.chevron = '<span class="md md-chevron-right"></span>';
 
+        self.isSearchModeOn = false;
         self.searchValue = '';
         self.searchResults = [];
 
@@ -41,6 +53,14 @@
         self.cl = function () {
             console.log.apply(console, arguments);
             return 'u';
+        }
+
+        self.toChevron = function (text) {
+            if (!text)
+                return text;
+
+            var response = text.replace(/>/gi, self.chevron, 'g');
+            return response;
         }
 
         self.fillLearnData = function () {
@@ -85,13 +105,35 @@
             if (0 == self.shown.state) {
 
                 self.shown.info = self.shown.item.de;
-                self.shown.info = self.shown.info.replace(/>/gi, self.chevron, 'g');
+                self.shown.info = self.toChevron(self.shown.info);
                 self.shown.state = 1;
                 self.nextBtn = self.btnTexts[self.shown.state];
                 return;
 
             }
 
+        }
+
+        self.changeToSearchMode = function (isOn) {
+
+            self.searchValue = '';
+            self.searchResults = [];
+
+            self.isSearchModeOn = isOn;
+
+            /*if (isOn)
+                setTimeout(function () {
+
+                    $('#idSearchField').focus();
+
+                }, 10);*/
+        }
+
+        self.selectSearchedWord = function (delem) {
+
+            self.shown = {item:delem, text:delem.pl, info:delem.info, state:1};
+
+            self.changeToSearchMode(false);
         }
 
         self.searchWord = function (keyword) {
@@ -104,7 +146,7 @@
             // ToDo: tymczasowo - wszystko
             for (var idx = 0; idx < self.data.length; idx++) {
 
-                var delem = self.data[idx];
+                var delem = {pl : self.data[idx].pl, de : self.data[idx].de, info : self.toChevron(self.data[idx].de)};
 
                 // tylko zaczynające się na daną frazę
                 if (0 === delem.de.indexOf(keyword))
@@ -124,4 +166,4 @@
     document.addEventListener('pause', function() {
     }, false);
 
-})(window.jQuery);
+})(window.liteQuery);

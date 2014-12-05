@@ -12,25 +12,35 @@
     </head>
     <body>
         <div class="titlebar">
-            <div class="titlebar-content" style="display:none">
+            <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <!-- <div class="menu-button"><span class="md-menu"></span></div> -->
                 <div class="title-text">{{main.title}}</div>
-                <div class="search-button"><span class="md-search"></span></div>
+                <div    class="search-button tapArea"
+                        ng-click="main.changeToSearchMode(true)"
+                        af-focus="idSearchField"><span class="md-search"></span></div>
             </div>
 
-            <div class="titlebar-content">
+            <div class="titlebar-content" ng-show="main.isSearchModeOn">
                 <div class="title-text">
-                    <input class="text-input titlebar-text-input" type="text" ng-change="main.searchWord(main.searchValue)" ng-model="main.searchValue" />
+                    <input  class="text-input titlebar-text-input"
+                            type="text"
+                            ng-change="main.searchWord(main.searchValue)"
+                            ng-model="main.searchValue"
+                            id="idSearchField" />
                 </div>
-                <div class="search-button" ng-click="main.searchWord(main.searchValue)"><span class="md-close"></span></div>
+                <div class="search-button tapArea" ng-click="main.changeToSearchMode(false)"><span class="md-close"></span></div>
             </div>
         </div>
 
-        <div class="content search-results">
+        <div class="content search-results" ng-show="main.isSearchModeOn">
 
             <div class="fixed-fill-scroll-container fix-content-top">
-                <div class="tile quiz quiz-active" ng-repeat="sword in main.searchResults">
-                    <div class="activebig" >{{sword.de}}</div>
+                <div class="couter-titlebar-atop">
+                    <div class="tile quiz quiz-active tapArea"
+                         ng-repeat="sword in main.searchResults"
+                         ng-click="main.selectSearchedWord(sword)">
+                        <div class="activebig" ng-bind-html="sword.info"></div>
+                    </div>
                 </div>
             </div>
 
