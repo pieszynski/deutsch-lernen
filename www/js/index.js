@@ -120,18 +120,12 @@
             self.searchResults = [];
 
             self.isSearchModeOn = isOn;
-
-            /*if (isOn)
-                setTimeout(function () {
-
-                    $('#idSearchField').focus();
-
-                }, 10);*/
         }
 
         self.selectSearchedWord = function (delem) {
 
             self.shown = {item:delem, text:delem.pl, info:delem.info, state:1};
+            self.nextBtn = self.btnTexts[self.shown.state];
 
             self.changeToSearchMode(false);
         }
