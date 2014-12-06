@@ -3,6 +3,7 @@ platforms
 
 # js builds
 www/js/build
+www/js/build-startup.js
 www/js/built-app.js
 
 # node files

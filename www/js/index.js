@@ -179,12 +179,4 @@
 
     }]);
 
-    //document.addEventListener('deviceready', function() { console.log('rdy!'); navigator.splashscreen.hide(); }, false);
-
-    document.addEventListener('deviceready', function() {
-    }, false);
-
-    document.addEventListener('pause', function() {
-    }, false);
-
 })(window.liteQuery);

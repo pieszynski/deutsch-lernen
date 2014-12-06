@@ -25,7 +25,8 @@ button:focus {
     outline: none;
 }
 
-.hide {
+/* zostanie nadpisane przez AngularJS */
+.ng-hide {
     display: none;
 }
 

@@ -8,13 +8,13 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>{{main.title}}</title>
+        <title ng-bind="main.title">Deutsch mit Spaß lernen</title>
     </head>
     <body>
         <div class="titlebar">
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <!-- <div class="menu-button"><span class="md-menu"></span></div> -->
-                <div class="title-text">{{main.title}}</div>
+                <div class="title-text" ng-bind="main.title">Deutsch mit Spaß lernen</div>
                 <div    class="search-button tapArea"
                         ng-click="main.changeToSearchMode(true)"
                         af-focus="idSearchField"><span class="md-search"></span></div>
@@ -66,7 +66,7 @@
 
             </div>
 
-            <div ng-show="main.prev">
+            <div class="ng-hide" ng-show="main.prev">
 
                 <div class="tile quiz quiz-previous">
                     <div class="lowtext">Poprzednie słówko:</div>
@@ -95,6 +95,7 @@
         <script type="text/javascript" src="js/data.js"></script>
         <script type="text/javascript" src="js/index.js"></script> -->
 
-        <script type="text/javascript" src="js/built-app.js"></script>
+        <script type="text/javascript" src="js/build-startup.js"></script>
+        <!-- <script type="text/javascript" src="js/built-app.js"></script> -->
     </body>
 </html>
