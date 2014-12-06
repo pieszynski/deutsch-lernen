@@ -44,7 +44,7 @@
 
         self.isSearchModeOn = false;
         self.searchValue = '';
-        self.searchResults = [];
+        self.searchResults = null;
 
         self.shown = null;
         self.prev = null;
@@ -117,9 +117,8 @@
         self.changeToSearchMode = function (isOn) {
 
             self.searchValue = '';
-            self.searchResults = [];
-
             self.isSearchModeOn = isOn;
+            self.searchWord();
         }
 
         self.selectSearchedWord = function (delem) {
@@ -130,25 +129,53 @@
             self.changeToSearchMode(false);
         }
 
-        self.searchWord = function (keyword) {
-
-            self.searchResults = [];
+        self.initSearchObject = function () {
 
             if (!self.data)
                 return;
 
-            // ToDo: tymczasowo - wszystko
-            for (var idx = 0; idx < self.data.length; idx++) {
+            // tablica wyników jest pusta - uzupełnienie
+            if (!self.searchResults) {
 
-                var delem = {pl : self.data[idx].pl, de : self.data[idx].de, info : self.toChevron(self.data[idx].de)};
+                self.searchResults = [];
 
-                // tylko zaczynające się na daną frazę
-                if (0 === delem.de.indexOf(keyword))
+                for (var idx = 0; idx < self.data.length; idx++) {
+
+                    var delem = {
+                        pl : self.data[idx].pl,
+                        de : self.data[idx].de,
+                        info : self.toChevron(self.data[idx].de),
+                        visible : true
+                    };
                     self.searchResults.push(delem);
+                }
+            }
+        }
+
+        self.searchWord = function (keyword) {
+
+            if (!self.searchResults)
+                return;
+
+            if (keyword)
+                keyword = keyword.trim();
+
+            for (var idx = 0; idx < self.searchResults.length; idx++) {
+
+                var delem = self.searchResults[idx];
+
+                if (!keyword) {
+
+                    delem.visible = true;
+                    continue;
+                }
+
+                delem.visible = (0 === delem.de.indexOf(keyword));
             }
         }
 
         self.tap();
+        self.initSearchObject();
 
     }]);
 

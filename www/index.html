@@ -20,10 +20,11 @@
                         af-focus="idSearchField"><span class="md-search"></span></div>
             </div>
 
-            <div class="titlebar-content" ng-show="main.isSearchModeOn">
+            <div class="titlebar-content ng-hide" ng-show="main.isSearchModeOn">
                 <div class="title-text">
                     <input  class="text-input titlebar-text-input"
                             type="text"
+                            title="lalal"
                             ng-change="main.searchWord(main.searchValue)"
                             ng-model="main.searchValue"
                             id="idSearchField" />
@@ -32,13 +33,14 @@
             </div>
         </div>
 
-        <div class="content search-results" ng-show="main.isSearchModeOn">
+        <div class="content search-results ng-hide" ng-show="main.isSearchModeOn">
 
             <div class="fixed-fill-scroll-container fix-content-top">
                 <div class="couter-titlebar-atop">
-                    <div class="tile quiz quiz-active tapArea"
-                         ng-repeat="sword in main.searchResults"
-                         ng-click="main.selectSearchedWord(sword)">
+                    <div    class="tile quiz quiz-active tapArea"
+                            ng-repeat="sword in main.searchResults"
+                            ng-show="sword.visible"
+                            ng-click="main.selectSearchedWord(sword)">
                         <div class="activebig" ng-bind-html="sword.info"></div>
                     </div>
                 </div>
