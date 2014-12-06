@@ -3,7 +3,7 @@ var TestData = [
     {pl: 'naradzać / komentować / omawiać', de: 'besprechen > besprach > hat besprochen'}
 ];
 
-var Data1of3 = [
+var Data = [
     {pl: 'burzyć / niszczyć / zrywać / odrywać', de: 'abreißen > riss ab > hat abgerissen'},
     {pl: 'przypiekać', de: 'anbraten > briet an > hat angebraten'},
     {pl: 'zaczynać', de: 'anfangen > fing an > hat angefangen'},
@@ -25,7 +25,7 @@ var Data1of3 = [
     {pl: 'płonąć', de: 'brennen > brannte > hat gebrannt'},
     {pl: 'przynosić / serwować / odnosić', de: 'bringen > brachte > hat gebracht'},
     {pl: 'myśleć / sądzić / uważać', de: 'denken > dachte > hat gedacht'},
-    {pl: 'móc coś zrobić', de: 'dürfen > durfte > hat gedurft'},
+    {pl: 'mieć pozwolenie (na coś) / móc (coś zrobić)', de: 'dürfen > durfte > hat gedurft'},
     {pl: 'zapraszać / ładować / nakładać', de: 'einladen > lud ein > hat eingeladen'},
     {pl: 'czuć / odczuwać', de: 'empfinden > empfand > hat empfunden'},
     {pl: 'wyjaśnić / decydować / wygrać', de: 'entscheiden > entschied > hat entschieden'},
@@ -46,10 +46,8 @@ var Data1of3 = [
     {pl: 'iść / chodzić / wyruszać', de: 'gehen > ging > ist gegangen'},
     {pl: 'rozkoszować się / delektować / otrzymać', de: 'genießen > genoss > hat genossen'},
     {pl: 'wygrywać', de: 'gewinnen > gewann > hat gewonnen'},
-    {pl: 'podlewać / wylewać', de: 'gießen > goss > hat gegossen'}
-];
-
-var Data2of3 = [
+    {pl: 'podlewać / wylewać', de: 'gießen > goss > hat gegossen'},
+/* 2of3 */
     {pl: 'trzymać / zatrzymywać', de: 'halten > hielt > hat gehalten'},
     {pl: 'wisieć / zwisać', de: 'hängen > hing > hat gehangen'},
     {pl: 'podnosić / unosić / wydobywać', de: 'heben > hob > hat gehoben'},
@@ -101,10 +99,8 @@ var Data2of3 = [
     {pl: 'umierać', de: 'sterben > starb > ist gestorben'},
     {pl: 'malować / smarować (bułkę)', de: 'streichen > strich > hat gestrichen'},
     {pl: 'sprzeczać / kłucić się', de: 'streiten > stritt > hat gestritten'},
-    {pl: 'nosić / dźwigać', de: 'tragen > trug > hat getragen'}
-];
-
-var Data = [
+    {pl: 'nosić / dźwigać', de: 'tragen > trug > hat getragen'},
+/* 3of3 */
     {pl: 'spotykać / znaleźć / trafiać', de: 'treffen > traf > hat getroffen'},
     {pl: 'uprawiać (sport) / prowadzić (handel)', de: 'treiben > trieb > hat getrieben'},
     {pl: 'pić', de: 'trinken > trank > hat getrunken'},
