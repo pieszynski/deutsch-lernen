@@ -8,10 +8,7 @@
         var buildJsScript = document.createElement('script');
         buildJsScript.type = 'text/javascript';
         buildJsScript.src = 'js/built-app.js';
-
         document.head.appendChild(buildJsScript);
-
-        console.log('ready1');
     }
 
     function onPause() {

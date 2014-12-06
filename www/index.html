@@ -7,6 +7,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/startup.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title ng-bind="main.title">Deutsch mit Spaß lernen</title>
     </head>
@@ -15,8 +16,9 @@
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <!-- <div class="menu-button"><span class="md-menu"></span></div> -->
                 <div class="title-text" ng-bind="main.title">Deutsch mit Spaß lernen</div>
-                <div    class="search-button tapArea"
+                <div    class="search-button tapArea ng-hide"
                         ng-click="main.changeToSearchMode(true)"
+                        ng-show="main.isLoaded"
                         af-focus="idSearchField"><span class="md-search"></span></div>
             </div>
 
@@ -31,6 +33,11 @@
                 </div>
                 <div class="search-button tapArea" ng-click="main.changeToSearchMode(false)"><span class="md-close"></span></div>
             </div>
+        </div>
+
+        <div class="app-loading" ng-hide="main.isLoaded">
+            <div class=""><span class="startup-anim md-settings-backup-restore md-2x"></span></div>
+            <div class="lowquestion">Wczytuję aplikację...</div>
         </div>
 
         <div class="content search-results ng-hide" ng-show="main.isSearchModeOn">
@@ -48,7 +55,7 @@
 
         </div>
 
-        <div class="content">
+        <div class="content ng-hide" ng-show="main.isLoaded">
 
             <!-- <div class="tile notify">
                 <div class="notify notify-dismiss"><span class="md-close md-2x"></span></div>

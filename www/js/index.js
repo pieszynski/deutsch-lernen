@@ -35,6 +35,8 @@
 
         var self = this;
 
+        self.isLoaded = true;
+
         self.data = window.Data;
         self.learn = [];
         self.btnTexts = ['znaczenie', 'następne'];

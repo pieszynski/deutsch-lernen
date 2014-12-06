@@ -1,0 +1,13 @@
+ @keyframes lrot {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+@-webkit-keyframes lrot {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+.startup-anim {
+    animation: lrot 1000ms linear infinite;
+    -webkit-animation: lrot 1000ms linear infinite;
+}
