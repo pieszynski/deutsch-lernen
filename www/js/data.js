@@ -49,7 +49,7 @@ var Data1of3 = [
     {pl: 'podlewać / wylewać', de: 'gießen > goss > hat gegossen'}
 ];
 
-var Data = [
+var Data2of3 = [
     {pl: 'trzymać / zatrzymywać', de: 'halten > hielt > hat gehalten'},
     {pl: 'wisieć / zwisać', de: 'hängen > hing > hat gehangen'},
     {pl: 'podnosić / unosić / wydobywać', de: 'heben > hob > hat gehoben'},
@@ -102,4 +102,40 @@ var Data = [
     {pl: 'malować / smarować (bułkę)', de: 'streichen > strich > hat gestrichen'},
     {pl: 'sprzeczać / kłucić się', de: 'streiten > stritt > hat gestritten'},
     {pl: 'nosić / dźwigać', de: 'tragen > trug > hat getragen'}
+];
+
+var Data = [
+    {pl: 'spotykać / znaleźć / trafiać', de: 'treffen > traf > hat getroffen'},
+    {pl: 'uprawiać (sport) / prowadzić (handel)', de: 'treiben > trieb > hat getrieben'},
+    {pl: 'pić', de: 'trinken > trank > hat getrunken'},
+    {pl: 'czynić / wyrządzić', de: 'tun > tat > hat getan'},
+    {pl: 'przesadzać (z czymś)', de: 'übertreiben > übertrieb > hat übertrieben'},
+    {pl: 'przerywać', de: 'unterbrechen > unterbrach > hat unterbrochen'},
+    {pl: 'zabawiać / bawić się / utrzymywć / mieć na utrzymaniu', de: 'unterhalten > unterhielt > hat unterhalten'},
+    {pl: 'podkreślać / akcentować', de: 'unterstreichen > unterstrich > hat unterstrichen'},
+    {pl: 'łączyć / opatrywać / zawiązywać', de: 'verbinden > verband > hat verbunden'},
+    {pl: 'spędzać (czas) / przewozić', de: 'verbringen > verbrachte > hat verbracht'},
+    {pl: 'upływać / ustępować / słabnąć', de: 'vergehen > verging > ist vergangen'},
+    {pl: 'zapominać', de: 'vergessen > vergaß > hat vergessen'},
+    {pl: 'porównywać', de: 'vergleichen > verglich > hat verglichen'},
+    {pl: 'zachowywać się / powściągać / poskramiać', de: 'verhalten (sich) > verhielt sich > hat sich verhalten'},
+    {pl: 'porzucić / opuszczać', de: 'verlassen > verließ > hat verlassen'},
+    {pl: 'gubić / tracić', de: 'verlieren > verlor > hat verloren'},
+    {pl: 'przesuwać / przekładać (obiekt lub termin)', de: 'verschieben > verschob > hat verschoben'},
+    {pl: 'zaspać / przespać', de: 'verschlafen > verschlief > hat verschlafen'},
+    {pl: 'obiecywać / zapowiadać', de: 'versprechen > versprach > hat versprochen'},
+    {pl: 'rozumieć / pojmować', de: 'verstehen > verstand > hat verstanden'},
+    {pl: 'wypędzać / wygnać / przegonić', de: 'vertreiben > vertrieb > hat vertrieben'},
+    {pl: 'proponować', de: 'vorschlagen > schlug vor > hat vorgeschlagen'},
+    {pl: 'rosnąć / wzrastać', de: 'wachsen > wuchs > ist gewachsen'},
+    {pl: 'myć / prać', de: 'waschen > wusch > hat gewaschen'},
+    {pl: 'boleć / skaleczyć się', de: 'wehtun > tat weh > hat wehgetan'},
+    {pl: 'stawać się / zostać', de: 'werden > wurde > ist geworden'},
+    {pl: 'rzucać / wyrzucać', de: 'werfen > warf > hat geworfen'},
+    {pl: 'sprzeciwiać / zaprzeczać', de: 'widersprechen > widersprach > hat widersprochen'},
+    {pl: 'ważyć', de: 'wiegen > wog > hat gewogen'},
+    {pl: 'machać', de: 'winken > winkte > hat gewunken / gewinkt'},
+    {pl: 'wiedzieć / znać', de: 'wissen > wusste > hat gewusst'},
+    {pl: 'tłuc / rozbijać', de: 'zerbrechen > zerbrach > hat zerbrochen'},
+    {pl: 'ciągnąć / podciągać', de: 'ziehen > zog > hat gezogen'}
 ];
