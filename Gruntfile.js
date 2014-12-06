@@ -70,4 +70,14 @@ module.exports = function(grunt) {
         'shell:cordovaBrowser'
         ]);
 
+    grunt.registerTask('live', [
+        'clean',
+        'concat:dataAndIndex',
+        'concat:vendors',
+        'uglify',
+        'concat:live',
+        'clean:build',
+        'shell:cordovaBrowser'
+        ]);
+
 };
