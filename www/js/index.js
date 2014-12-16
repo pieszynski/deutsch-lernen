@@ -1,5 +1,5 @@
 
-(function ($) {
+(function ($, window) {
 
     var app = angular.module('root', ['ngSanitize', 'ngTouch']);
 
@@ -53,11 +53,12 @@
         self.nextBtn = self.btnTexts[0];
 
         self.cl = function () {
+
             console.log.apply(console, arguments);
-            return 'u';
         }
 
         self.toChevron = function (text) {
+
             if (!text)
                 return text;
 
@@ -120,6 +121,15 @@
 
             self.searchValue = '';
             self.isSearchModeOn = isOn;
+
+            if (isOn)
+                window.registerBack(function () {
+                    self.changeToSearchMode(false);
+                    $scope.$applyAsync();
+                });
+            else
+                window.registerBack(null);
+
             self.searchWord();
         }
 
@@ -181,4 +191,4 @@
 
     }]);
 
-})(window.liteQuery);
+})(window.liteQuery, window);
