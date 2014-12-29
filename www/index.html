@@ -50,8 +50,15 @@
                 <div class="menu-contents-bottom-scroll-spacer">
 
                     <div class="menu-group-name">Tryb nauki</div>
+                    <div class="tile tile-menu menu-tile-colors tapArea"
+                         ng-repeat="appMode in main.applicationModes"
+                         ng-click="main.changeApplicationMode(appMode.name, appMode)">
 
-                    <div class="tile tile-menu menu-tile-colors tapArea">
+                        <div class="menu-tile-text" ng-bind-html="appMode.text"></div>
+                        <div class="menu-tile-check {{appMode.selected ? 'md-radio-button-on' : 'md-radio-button-off'}}"></div>
+                    </div>
+
+                    <!-- <div class="tile tile-menu menu-tile-colors tapArea">
                         <div class="menu-tile-text">Wszystkie czasowniki</div>
                         <div class="menu-tile-check md-radio-button-on"></div>
                     </div>
@@ -61,7 +68,7 @@
                             Tylko oznaczone "<span class="md-star"></span>"
                         </div>
                         <div class="menu-tile-check md-radio-button-off"></div>
-                    </div>
+                    </div> -->
 
                     <!-- Pieśń przyszłości...
                     <div class="menu-group-name">Opcje dodatkowe</div>

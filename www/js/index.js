@@ -40,14 +40,17 @@
         self.data = window.Data;
         self.learn = [];
         self.btnTexts = ['znaczenie', 'następne'];
-        self.applicationModes = ['allIrregularVerbs', 'starredIrregularVerbs'];
+        self.applicationModes = [
+            {name : 'allIrregularVerbs', selected: true, text : 'Wszystkie czasowniki'},
+            {name : 'starredIrregularVerbs', selected: false, text : 'Tylko oznaczone "<span class="md-star"></span>"'}
+        ];
+        self.currentApplicationMode = self.applicationModes[0];
 
         self.title = 'Deutsch mit Spaß lernen';
         self.chevron = '<span class="md md-chevron-right"></span>';
-        self.defaultApplicationMode = self.applicationModes[0];
 
         self.appSettings = {
-            applicationMode : self.defaultApplicationMode,
+            applicationMode : self.applicationModes[0].name,
             starredIrregularVerbs : []
         };
 
@@ -102,7 +105,7 @@
 
             for (var i = 0; i < self.appSettings.starredIrregularVerbs.length; i++) {
 
-                if (wordModel.pl == self.appSettings.starredIrregularVerbs[i]) {
+                if (wordModel.pl === self.appSettings.starredIrregularVerbs[i]) {
 
                     wordExistsAtIdx = i;
                     break;
@@ -143,6 +146,10 @@
                 return;
 
             self.appSettings = appSettings;
+
+            // wyszukianie odpowiedniego trybu aplikacji lub przejście do domyślnego
+            var appMode = self.getApplicationModeByName(self.appSettings.applicationMode);
+            self.currentApplicationMode = appMode ? appMode : self.applicationModes[0];
         };
 
         self.readAllAppSettings = function () {
@@ -250,11 +257,38 @@
             }
         }
 
-        self.changeApplicationMode = function (modeName) {
+        self.getApplicationModeByName = function (modeName) {
+
+            for (var i = 0; i < self.applicationModes.length; i++) {
+
+                if (modeName === self.applicationModes[i].name)
+                    return self.applicationModes[i];
+            }
+
+            return undefined;
+        };
+
+        self.changeApplicationMode = function (modeName, modeModel) {
 
             // akcja domyślna
             if (!modeName)
                 modeName = self.appSettings.applicationMode;
+
+            if (!modeModel)
+                modeModel = self.getApplicationModeByName(modeName);
+
+            if (modeModel) {
+
+                // zmiana flagi stanu
+                for (var i = 0; i < self.applicationModes.length; i++)
+                    self.applicationModes[i].selected = false;
+
+                modeModel.selected = true;
+                self.appSettings.applicationMode = modeModel.name;
+
+                // zapisanie aktualnego trybu aplikacji
+                self.saveAllAppSettings();
+            }
 
             // wyczyszczenie pól
             self.shown = undefined;
