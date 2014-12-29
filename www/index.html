@@ -14,8 +14,10 @@
     <body>
         <div class="titlebar">
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
-                <!-- <div class="menu-button"><span class="md-menu"></span></div> -->
-                <div class="title-text" ng-bind="main.title">Deutsch mit Spaß lernen</div>
+                <div class="title-text">
+                    <span class="menu-button menu-button-hidden md-menu ng-hide" ng-show="main.isLoaded"></span>
+                    <span ng-bind="main.title">Deutsch mit Spaß lernen</span>
+                </div>
                 <div    class="search-button tapArea ng-hide"
                         ng-click="main.changeToSearchMode(true)"
                         ng-show="main.isLoaded"

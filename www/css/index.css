@@ -150,8 +150,12 @@ button:focus {
 }
 
 .menu-button {
-    float: left;
-    margin-right: 15px;
+    position: absolute;
+    width: 55px;
+}
+
+.menu-button-hidden {
+    left: -13px;
 }
 
 .title-text {
@@ -160,6 +164,10 @@ button:focus {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 100%;
+}
+
+.title-text-menu-shown {
+    padding-left: 30px;
 }
 
 .search-button {
