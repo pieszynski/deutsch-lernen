@@ -15,12 +15,16 @@
         <div class="titlebar">
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <div class="title-text">
-                    <span class="menu-button menu-button-hidden md-menu ng-hide" ng-show="main.isLoaded"></span>
-                    <span ng-bind="main.title">Deutsch mit Spaß lernen</span>
+                    <span class="ng-hide"
+                          ng-click="main.menuClick()"
+                          ng-class="main.menuButtonButtonClass"
+                          ng-show="main.isLoaded"></span>
+                    <span ng-bind="main.title"
+                          ng-class="main.menuButtonTitleClass">Deutsch mit Spaß lernen</span>
                 </div>
                 <div    class="search-button tapArea ng-hide"
                         ng-click="main.changeToSearchMode(true)"
-                        ng-show="main.isLoaded"
+                        ng-show="main.isLoaded &amp;&amp; main.isMenuHidden"
                         af-focus="idSearchField"><span class="md-search"></span></div>
             </div>
 

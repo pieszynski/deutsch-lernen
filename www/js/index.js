@@ -44,6 +44,10 @@
         self.title = 'Deutsch mit Spaß lernen';
         self.chevron = '<span class="md md-chevron-right"></span>';
 
+        self.isMenuHidden = true;
+        self.menuButtonButtonClass = 'md-menu menu-button menu-button-hidden';
+        self.menuButtonTitleClass = '';
+
         self.isSearchModeOn = false;
         self.searchValue = '';
         self.searchResults = null;
@@ -78,6 +82,21 @@
 
             }
         }
+
+        self.menuClick = function () {
+
+            self.isMenuHidden = !self.isMenuHidden;
+
+            if (self.isMenuHidden) {
+
+                self.menuButtonButtonClass = 'md-menu menu-button menu-button-hidden';
+                self.menuButtonTitleClass = '';
+            } else {
+
+                self.menuButtonButtonClass = 'md-arrow-back menu-button';
+                self.menuButtonTitleClass = 'title-text-menu-shown';
+            }
+        };
 
         self.getNewItem = function () {
 
