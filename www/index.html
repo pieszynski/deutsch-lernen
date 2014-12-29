@@ -15,7 +15,7 @@
         <div class="titlebar">
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <div class="title-text">
-                    <span class="ng-hide"
+                    <span class="tapArea ng-hide"
                           ng-click="main.menuClick()"
                           ng-class="main.menuButtonButtonClass"
                           ng-show="main.isLoaded"></span>
@@ -43,6 +43,33 @@
         <div class="app-loading" ng-hide="main.isLoaded">
             <div class=""><span class="startup-anim md-settings-backup-restore md-2x"></span></div>
             <div class="lowquestion">Wczytuję aplikację...</div>
+        </div>
+
+        <div class="content menu-contents">
+            <div class="fixed-fill-scroll-container">
+                <div class="menu-contents-bottom-scroll-spacer">
+
+                    <div class="menu-group-name">Tryb nauki</div>
+
+                    <div class="tile tile-menu menu-tile-colors tapArea">
+                        <div class="menu-tile-text">Wszystkie czasowniki</div>
+                        <div class="menu-tile-check md-radio-button-on"></div>
+                    </div>
+
+                    <div class="tile tile-menu menu-tile-colors tapArea">
+                        <div class="menu-tile-text">Tylko ulubione</div>
+                        <div class="menu-tile-check md-radio-button-off"></div>
+                    </div>
+
+                    <div class="menu-group-name">Opcje dodatkowe</div>
+
+                    <div class="tile tile-menu menu-tile-colors tapArea">
+                        <div class="menu-tile-text">Pokazuj zdania</div>
+                        <div class="menu-tile-check md-check-box md-check-box-outline-blank"></div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div class="content search-results ng-hide" ng-show="main.isSearchModeOn">

@@ -108,6 +108,12 @@ button:focus {
     box-shadow: 0px 2px 2px #888;
 }
 
+.tile-menu {
+    border-radius: 0px;
+    box-shadow: 0px 1px 2px #888;
+    margin: 10px 0px;
+}
+
 .quiz {
 }
 
@@ -210,4 +216,49 @@ button:focus {
     max-height: 100%;
     width: 100%;
     overflow-y: auto;
+}
+
+.menu-contents {
+    background-color: white;
+    box-shadow: 0px 2px 5px #888;
+    height: 100%;
+    left: 0px;
+    margin-top: 65px;
+    position: fixed;
+    width: 200px;
+    top: 0px;
+    z-index: 90;
+}
+
+.menu-contents .menu-contents-bottom-scroll-spacer {
+    margin-bottom: 65px;
+}
+
+.menu-group-name {
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.menu-tile-colors {
+    background-color: #bf360c;
+    color: white;
+    font-size: 15px;
+}
+
+.menu-tile-colors:before, .menu-tile-colors:after {
+    content: ' ';
+    display: block;
+}
+
+.menu-tile-colors:after {
+    clear: both;
+}
+
+.menu-tile-colors .menu-tile-text {
+    float: left;
+}
+.menu-tile-colors .menu-tile-check {
+    float: right;
+    margin-top: 4px;
 }
