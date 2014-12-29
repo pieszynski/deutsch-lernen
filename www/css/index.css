@@ -114,6 +114,17 @@ button:focus {
     margin: 10px 0px;
 }
 
+.tile-options {
+    position: relative;
+    top: 0px;
+}
+
+.tile-options .tile-star {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
 .quiz {
 }
 

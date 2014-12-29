@@ -57,7 +57,9 @@
                     </div>
 
                     <div class="tile tile-menu menu-tile-colors tapArea">
-                        <div class="menu-tile-text">Tylko ulubione</div>
+                        <div class="menu-tile-text">
+                            Tylko oznaczone "<span class="md-star"></span>"
+                        </div>
                         <div class="menu-tile-check md-radio-button-off"></div>
                     </div>
 
@@ -99,6 +101,12 @@
             <div class="tapArea" ng-click="main.tap()">
 
                 <div class="tile quiz quiz-active">
+                    <div class="tile-options">
+                        <div class="tile-star"
+                             ng-click="main.starClick($event, main.shown)">
+                            <span class="md-2x {{main.shown.item.hasStar ? 'md-star' : 'md-star-outline'}}"></span>
+                        </div>
+                    </div>
                     <div class="lowtext">Aktualne słówko:</div>
                     <div class="activequestion" ng-bind-html="main.shown.text"></div>
                     <div class="lowtext">Po niemiecku?</div>
@@ -110,6 +118,12 @@
             <div class="ng-hide" ng-show="main.prev">
 
                 <div class="tile quiz quiz-previous">
+                    <div class="tile-options">
+                        <div class="tile-star"
+                             ng-click="main.starClick($event, main.prev)">
+                            <span class="md-2x {{main.prev.item.hasStar ? 'md-star' : 'md-star-outline'}}"></span>
+                        </div>
+                    </div>
                     <div class="lowtext">Poprzednie słówko:</div>
                     <div class="lowquestion" ng-bind-html="main.prev.text"></div>
                     <div class="lowtext">Po niemiecku?</div>
