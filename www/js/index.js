@@ -145,6 +145,16 @@
             return response;
         };
 
+        self.onMenuButton = function () {
+
+            // jeśli jest włączona wyszukiwarka to nie można pokazać menu
+            if (self.isSearchModeOn)
+                return;
+
+            self.menuClick();
+            $scope.$applyAsync();
+        };
+
         self.updateAppSettingsFromSaveState = function (appSettings) {
 
             // aktualizacja obiektu ustawień dostępnego dla kontrolera
@@ -406,6 +416,7 @@
 
 
         window.registerBack(self.onBackButton);
+        window.registerMenu(self.onMenuButton);
         self.readAllAppSettings();
         self.changeApplicationMode();
         self.initSearchObject();

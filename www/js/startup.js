@@ -3,7 +3,8 @@
 
     'use strict';
 
-    var backCallback = null;
+    var backCallback = null,
+        menuCallback = null;
 
     function onDeviceReady() {
 
@@ -39,9 +40,15 @@
             navigator.app.exitApp();
     }
 
+    window.registerMenu = function (callback) {
+
+        menuCallback = callback;
+    };
+
     function onMenu() {
 
-        //document.getElementById('idTest').innerText = 'menuuzzz';
+        if (menuCallback)
+            menuCallback();
     }
 
     //document.addEventListener('deviceready', function() { console.log('rdy!'); navigator.splashscreen.hide(); }, false);
