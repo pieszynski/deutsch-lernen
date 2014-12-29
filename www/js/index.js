@@ -26,7 +26,8 @@
 
             elem.bind('click', function () {
 
-                $('#' + attrs.afFocus).focus();
+                // BUG: nie działa...
+                // $('#' + attrs.afFocus).focus();
             })
         }
     })
@@ -85,12 +86,18 @@
             if (0 < self.learn.length)
                 return;
 
+            var onlyStarredMode = 'starredIrregularVerbs' === self.appSettings.applicationMode;
+
             for(var i = 0; i < self.data.length; i++) {
 
                 var obj = {pl : self.data[i].pl, de : self.data[i].de, hasStar : false};
 
                 // sprawdzenie czy obiektu nie ma na liście oznaczonych gwiazdką
                 obj.hasStar = !(-1 == self.getStarredIndex(obj));
+
+                // jeśli tryb aplikacji jest ustawiony na słówka tylko z gwiazdką to nie dodajemy innych
+                if (!obj.hasStar && onlyStarredMode)
+                    continue;
 
                 self.learn.push(obj);
             }
@@ -224,6 +231,9 @@
 
             self.fillLearnData();
 
+            if (0 == self.learn.length)
+                return undefined;
+
             var elIdx = self.learn.length * Math.random();
             elIdx = Math.floor(elIdx);
 
@@ -240,6 +250,13 @@
                     self.prev = self.shown;
 
                 var nitem = self.getNewItem();
+                if (!nitem) {
+
+                    self.shown = undefined;
+                    self.prev = undefined;
+                    return;
+                };
+
                 self.shown = {item:nitem, text:nitem.pl, info:'...', state:0};
                 self.nextBtn = self.btnTexts[self.shown.state];
                 return;
@@ -268,7 +285,7 @@
             return undefined;
         };
 
-        self.changeApplicationMode = function (modeName, modeModel) {
+        self.changeApplicationMode = function (modeName, modeModel, hideMenuPanel) {
 
             // akcja domyślna
             if (!modeName)
@@ -301,6 +318,12 @@
             // pobranie pierwszego elementu
             self.tap();
 
+            // ukrycie paska menu
+            if (hideMenuPanel) {
+
+                self.menuClick(true);
+            }
+
             // odświeżenie interfejsu
             $scope.$applyAsync();
         };
@@ -308,6 +331,9 @@
         self.starClick = function (evt, viewElementModel) {
 
             evt.stopPropagation();
+
+            if (!viewElementModel)
+                return;
 
             // zapisanie wartości w ustawieniach
             self.setAppSettingsStar(viewElementModel.item, !viewElementModel.item.hasStar);

@@ -52,7 +52,7 @@
                     <div class="menu-group-name">Tryb nauki</div>
                     <div class="tile tile-menu menu-tile-colors tapArea"
                          ng-repeat="appMode in main.applicationModes"
-                         ng-click="main.changeApplicationMode(appMode.name, appMode)">
+                         ng-click="main.changeApplicationMode(appMode.name, appMode, true)">
 
                         <div class="menu-tile-text" ng-bind-html="appMode.text"></div>
                         <div class="menu-tile-check {{appMode.selected ? 'md-radio-button-on' : 'md-radio-button-off'}}"></div>
