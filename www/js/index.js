@@ -83,9 +83,34 @@
             }
         }
 
-        self.menuClick = function () {
+        self.onBackButton = function () {
 
-            self.isMenuHidden = !self.isMenuHidden;
+            var response = false;
+
+            if (self.isSearchModeOn) {
+
+                self.changeToSearchMode(false);
+                response = true;
+            }
+
+            if (!self.isMenuHidden) {
+
+                self.menuClick(true);
+                response = true;
+            }
+
+            if (response)
+                    $scope.$applyAsync();
+
+            return response;
+        };
+
+        self.menuClick = function (doHideMenuOverride) {
+
+            if (undefined !== doHideMenuOverride)
+                self.isMenuHidden = doHideMenuOverride;
+            else
+                self.isMenuHidden = !self.isMenuHidden;
 
             if (self.isMenuHidden) {
 
@@ -140,14 +165,6 @@
 
             self.searchValue = '';
             self.isSearchModeOn = isOn;
-
-            if (isOn)
-                window.registerBack(function () {
-                    self.changeToSearchMode(false);
-                    $scope.$applyAsync();
-                });
-            else
-                window.registerBack(null);
 
             self.searchWord();
         }
@@ -205,6 +222,8 @@
             }
         }
 
+
+        window.registerBack(self.onBackButton);
         self.tap();
         self.initSearchObject();
 

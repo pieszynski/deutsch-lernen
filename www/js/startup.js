@@ -28,14 +28,15 @@
 
     function onBack() {
 
+        var backResponse = undefined;
         if (undefined !== backCallback && null != backCallback) {
 
-            backCallback();
-            return;
+            backResponse = backCallback();
         }
 
-        // jeśli nie zdefiniowano funkcji to zamykamy aplikację
-        navigator.app.exitApp();
+        // jeśli nie zdefiniowano funkcji lub zwróciła FALSE to zamykamy aplikację
+        if (!backResponse)
+            navigator.app.exitApp();
     }
 
     function onMenu() {
