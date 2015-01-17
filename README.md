@@ -9,4 +9,4 @@ Aplikacja do nauki języka niemieckiego
 
 ####Pomocnik
 * Aktualizacja aplikacji bez utraty ustawień: ```adb install -r plik.apk```
-* Cordova zmienia ```<Identity Name="..."``` w manifeście dla Windows Phone (```package.phone.appxmanifest```) dlatego należy tam zakomentować w pliku ```deutsch-lernen\platforms\windows\cordova\lib\prepare.js``` linię zawierającą ```pkgName && (identityNode.attrib.Name = pkgName);```.
+* Cordova zmienia ```<Identity Name="..."``` w manifeście dla Windows Phone (```package.phone.appxmanifest```) dlatego należy zakomentować w pliku ```deutsch-lernen\platforms\windows\cordova\lib\prepare.js``` linię zawierającą ```pkgName && (identityNode.attrib.Name = pkgName);```.
