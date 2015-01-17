@@ -10,7 +10,11 @@ module.exports = function(grunt) {
             },
             live : {
                 force : true,
-                src : ['www/js/build-startup.js', 'www/js/built-app.js']
+                src : [
+                    'www/js/build-startup.js',
+                    'www/js/built-app.js',
+                    'www/js/build-winstore-jscompat.min.js'
+                ]
             }
         },
         uglify: {
@@ -27,7 +31,8 @@ module.exports = function(grunt) {
             live: {
                 files: {
                     'www/js/build-startup.js' : ['www/js/startup.js'],
-                    'www/js/build/source.min.js': ['www/js/build/source.js']
+                    'www/js/build/source.min.js': ['www/js/build/source.js'],
+                    'www/js/build-winstore-jscompat.min.js' : ['www/js/winstore-jscompat.js']
                 }
             }
         },

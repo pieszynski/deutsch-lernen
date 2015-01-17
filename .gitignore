@@ -5,6 +5,7 @@ platforms
 www/js/build
 www/js/build-startup.js
 www/js/built-app.js
+www/js/build-winstore-jscompat.min.js
 
 # node files
 node_modules
