@@ -11,3 +11,9 @@
     animation: lrot 1000ms linear infinite;
     -webkit-animation: lrot 1000ms linear infinite;
 }
+
+.startup-text {
+    background-color: #ccc; /* wp8.1 */
+    font-size: 20px;
+    margin: 5px 0 25px 0;
+}

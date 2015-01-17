@@ -5,10 +5,21 @@
 }
 
 html {
+    background-color: #ccc; /* wp8.1 */
     min-height: 100%;
     line-height: 24px;
     font-size: 13px;
     font-family: 'RobotoDraft','Roboto-Regular',Helvetica,Arial,sans-serif;
+}
+
+html, * {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
@@ -147,22 +158,26 @@ button:focus {
 }
 
 .activequestion {
+    background-color: white; /* wp8.1 */
     font-size: 25px;
     margin: 5px 0 25px 0;
     line-height: 32px;
 }
 
 .activeanswer {
+    background-color: white; /* wp8.1 */
     font-size: 25px;
     line-height: 32px;
 }
 
 .lowquestion {
+    background-color: #ddd; /* wp8.1 */
     font-size: 20px;
     margin: 5px 0 25px 0;
 }
 
 .lowanswer {
+    background-color: #ddd; /* wp8.1 */
     font-size: 20px;
 }
 
@@ -267,6 +282,7 @@ button:focus {
 }
 
 .menu-tile-colors .menu-tile-text {
+    background-color: #bf360c; /* wp8.1 */
     float: left;
 }
 .menu-tile-colors .menu-tile-check {

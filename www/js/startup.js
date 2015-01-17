@@ -12,10 +12,10 @@
         document.addEventListener('backbutton', onBack, false);
         document.addEventListener('menubutton', onMenu, false);
 
-        //var buildJsScript = document.createElement('script');
-        //buildJsScript.type = 'text/javascript';
-        //buildJsScript.src = 'js/built-app.js';
-        //document.head.appendChild(buildJsScript);
+        var buildJsScript = document.createElement('script');
+        buildJsScript.type = 'text/javascript';
+        buildJsScript.src = 'js/built-app.js';
+        document.head.appendChild(buildJsScript);
     }
 
     function onPause() {
