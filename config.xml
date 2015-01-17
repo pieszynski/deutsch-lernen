@@ -8,5 +8,4 @@
     <access origin="*" />
 
     <preference name='windows-target-version' value='8.1' />
-
 </widget>
