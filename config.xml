@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pieszynski.hybrid.deutchlernen" version="0.0.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.pieszynski.hybrid.deutchlernen" version="0.0.9.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Deutsch mit Spaß lernen</name>
     <description>Mała aplikacja do nauki niemieckiego.</description>
     <author email="android@pieszynski.com" href="http://www.pieszynski.com">pieszynski.com</author>

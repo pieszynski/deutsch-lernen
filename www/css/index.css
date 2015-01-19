@@ -289,3 +289,17 @@ button:focus {
     float: right;
     margin-top: 4px;
 }
+
+
+.activequestion.ng-binding { background-color: #ffffff; } /* wp8.1 */
+.activequestion.ng-binding * { background-color: #ffffff; } /* wp8.1 */
+.activeanswer.ng-binding { background-color: #ffffff; } /* wp8.1 */
+.activeanswer.ng-binding * { background-color: #ffffff; } /* wp8.1 */
+.lowquestion.ng-binding { background-color: #dddddd; } /* wp8.1 */
+.lowquestion.ng-binding * { background-color: #dddddd; } /* wp8.1 */
+.lowanswer.ng-binding { background-color: #dddddd; } /* wp8.1 */
+.lowanswer.ng-binding * { background-color: #dddddd; } /* wp8.1 */
+.activebig.ng-binding { background-color: #ffffff; } /* wp8.1 */
+.activebig.ng-binding * { background-color: #ffffff; } /* wp8.1 */
+.menu-tile-colors .menu-tile-text.ng-binding { background-color: #bf360c; } /* wp8.1 */
+.menu-tile-colors .menu-tile-text.ng-binding * { background-color: #bf360c; } /* wp8.1 */
