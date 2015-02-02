@@ -62,6 +62,24 @@ module.exports = function(grunt) {
             cordovaBrowser: {
                 command: 'cordova build browser && cordova serve'
             }
+        },
+        copy: {
+            dev: {
+                files: [
+                    {src: 'www/index.src.html', dest: 'www/index.html'}
+                ]
+            }
+        },
+        htmlmin: {
+            live: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'www/index.html': 'www/index.html'
+                }
+            }
         }
     });
 
@@ -72,6 +90,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.registerTask('cls', ['clean']);
 
