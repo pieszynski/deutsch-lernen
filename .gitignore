@@ -7,6 +7,10 @@ www/js/build-startup.js
 www/js/built-app.js
 www/js/build-winstore-jscompat.min.js
 
+# css builds
+www/css/index.css
+www/css/startup.css
+
 # html builds
 www/index.html
 

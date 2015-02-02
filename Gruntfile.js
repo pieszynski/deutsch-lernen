@@ -13,7 +13,9 @@ module.exports = function(grunt) {
                 src : [
                     'www/js/build-startup.js',
                     'www/js/built-app.js',
-                    'www/js/build-winstore-jscompat.min.js'
+                    'www/js/build-winstore-jscompat.min.js',
+                    'www/css/index.css',
+                    'www/css/startup.css'
                 ]
             }
         },
@@ -42,8 +44,8 @@ module.exports = function(grunt) {
                     compress: false
                 },
                 files: {
-                    'css/index.css': 'css/index.less',
-                    'css/startup.css': 'css/startup.less'
+                    'www/css/index.css': 'www/css/index.less',
+                    'www/css/startup.css': 'www/css/startup.less'
                 }
             },
             live: {
@@ -51,8 +53,8 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'css/index.css': 'css/index.less',
-                    'css/startup.css': 'css/startup.less'
+                    'www/css/index.css': 'www/css/index.less',
+                    'www/css/startup.css': 'www/css/startup.less'
                 }
             }
         },
@@ -116,6 +118,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dev', [
         'clean',
+        'less:dev',
         'concat:dataAndIndex',
         'concat:vendors',
         'uglify:always',
@@ -128,6 +131,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('live', [
         'clean',
+        'less:live',
         'concat:dataAndIndex',
         'concat:vendors',
         'uglify',
