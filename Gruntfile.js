@@ -25,14 +25,34 @@ module.exports = function(grunt) {
             },
             always: {
                 files: {
-                    'www/js/build/source.min.js': ['www/js/build/source.js']
+                    'www/js/build/source.min.js': ['www/js/build/source.js'],
+                    'www/js/build-winstore-jscompat.min.js' : ['www/js/winstore-jscompat.js']
                 }
             },
             live: {
                 files: {
                     'www/js/build-startup.js' : ['www/js/startup.js'],
-                    'www/js/build/source.min.js': ['www/js/build/source.js'],
-                    'www/js/build-winstore-jscompat.min.js' : ['www/js/winstore-jscompat.js']
+                    'www/js/build/source.min.js': ['www/js/build/source.js']
+                }
+            }
+        },
+        less: {
+            dev: {
+                options: {
+                    compress: false
+                },
+                files: {
+                    'css/index.css': 'css/index.less',
+                    'css/startup.css': 'css/startup.less'
+                }
+            },
+            live: {
+                options: {
+                    compress: true
+                },
+                files: {
+                    'css/index.css': 'css/index.less',
+                    'css/startup.css': 'css/startup.less'
                 }
             }
         },
@@ -102,6 +122,7 @@ module.exports = function(grunt) {
         'concat:devStartup',
         'concat:dev',
         'clean:build',
+        'copy:dev',
         'shell:cordovaBrowser'
         ]);
 
@@ -112,6 +133,8 @@ module.exports = function(grunt) {
         'uglify',
         'concat:live',
         'clean:build',
+        'copy:dev',
+        'htmlmin:live',
         'shell:cordovaBrowser'
         ]);
 

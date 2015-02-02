@@ -7,6 +7,9 @@ www/js/build-startup.js
 www/js/built-app.js
 www/js/build-winstore-jscompat.min.js
 
+# html builds
+www/index.html
+
 # node files
 node_modules
 
