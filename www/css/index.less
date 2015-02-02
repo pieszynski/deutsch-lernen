@@ -1,11 +1,19 @@
 
+@main-color: #bf360c;
+@main-color-50alfa: rgba(191, 54, 12, .5);
+@main-color-20alfa: rgba(191, 54, 12, .2);
+@main-backgroind-color: #ccc;
+@notify-color: #afa;
+
+@blueish-color: #aaffff;
+
 @font-face{
     font-family:'Roboto-Regular';
     src:url('../fonts/Roboto-Regular.ttf') format('truetype')
 }
 
 html {
-    background-color: #ccc; /* wp8.1 */
+    background-color: @main-backgroind-color; /* wp8.1 */
     min-height: 100%;
     line-height: 24px;
     font-size: 13px;
@@ -26,7 +34,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-color: #ccc;
+    background-color: @main-backgroind-color;
 }
 
 input:focus,
@@ -48,11 +56,15 @@ button:focus {
     text-align: center;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .titlebar {
     z-index: 100;
     font-size: 24px;
     color: white;
-    background-color: #bf360c;
+    background-color: @main-color;
     box-shadow: 0px 2px 5px #888;
     position: fixed;
     margin-top: 0px;
@@ -93,7 +105,7 @@ button:focus {
     padding: 15px;
     margin: 20px;
     color: white;
-    background-color: #bf360c;
+    background-color: @main-color;
     border-radius: 5px;
     box-shadow: 0px 2px 5px #888;
     cursor: pointer;
@@ -107,7 +119,7 @@ button:focus {
 
 .titlebar-text-input {
     border-bottom: 1px solid white;
-    background-color: #bf360c;
+    background-color: @main-color;
     color: white;
     width: 90%;
 }
@@ -211,7 +223,7 @@ button:focus {
 }
 
 .notify {
-    background-color: #afa;
+    background-color: @notify-color;
 }
 
 .notify .notify-dismiss {
@@ -261,13 +273,13 @@ button:focus {
 }
 
 .menu-group-name {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid @main-backgroind-color;
     font-size: 20px;
     margin: 10px;
 }
 
 .menu-tile-colors {
-    background-color: #bf360c;
+    background-color: @main-color;
     color: white;
     font-size: 15px;
 }
@@ -282,12 +294,87 @@ button:focus {
 }
 
 .menu-tile-colors .menu-tile-text {
-    background-color: #bf360c; /* wp8.1 */
+    background-color: @main-color; /* wp8.1 */
     float: left;
 }
 .menu-tile-colors .menu-tile-check {
     float: right;
     margin-top: 4px;
+}
+
+.multi3 {
+    &:before, &:after {
+        content: ' ';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    .elemFloat {
+        float: left;
+    }
+    .elemCenter {
+        cursor: pointer;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+    }
+    .elemLeftBorder {
+        border-left: 1px solid @main-backgroind-color;
+    }
+    .m3selected {
+        &:after {
+            content: '\f023';
+            font-family:'Material Design Iconic Font';
+            position: relative;
+        }
+    }
+    .m3ok {
+        background-color: @notify-color;
+    }
+    .m3error {
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          @main-color-50alfa 10px,
+          @main-color-50alfa 20px
+        );
+    }
+    .m3num {
+        .elemFloat();
+        width: 10%;
+    }
+    .m3item30 {
+        .elemCenter();
+        .elemFloat();
+        width: 30%
+    }
+    .m3item33first {
+        .elemCenter();
+        .elemFloat();
+        width: 33%
+    }
+    .m3item33 {
+        .elemCenter();
+        .elemLeftBorder();
+        .elemFloat();
+        width: 33%
+    }
+    .m3item50first {
+        .elemCenter();
+        .elemFloat();
+        width: 49%
+    }
+    .m3item50 {
+        .elemCenter();
+        .elemLeftBorder();
+        .elemFloat();
+        width: 49%
+    }
+    border-bottom: 1px solid @main-backgroind-color;
+    border-top: 1px solid @main-backgroind-color;
+    width: 100%;
 }
 
 
@@ -301,5 +388,5 @@ button:focus {
 .lowanswer.ng-binding * { background-color: #dddddd; } /* wp8.1 */
 .activebig.ng-binding { background-color: #ffffff; } /* wp8.1 */
 .activebig.ng-binding * { background-color: #ffffff; } /* wp8.1 */
-.menu-tile-colors .menu-tile-text.ng-binding { background-color: #bf360c; } /* wp8.1 */
-.menu-tile-colors .menu-tile-text.ng-binding * { background-color: #bf360c; } /* wp8.1 */
+.menu-tile-colors .menu-tile-text.ng-binding { background-color: @main-color; } /* wp8.1 */
+.menu-tile-colors .menu-tile-text.ng-binding * { background-color: @main-color; } /* wp8.1 */
