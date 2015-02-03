@@ -98,7 +98,7 @@
 
         </div>
 
-        <div class="content ng-hide" ng-show="main.isLoaded">
+        <div class="content ng-hide" ng-show="main.showInCurrentState('verbenLernen')">
 
             <!-- <div class="tile notify">
                 <div class="notify notify-dismiss"><span class="md-close md-2x"></span></div>
@@ -146,7 +146,7 @@
 
         </div>
 
-        <div>
+        <div class="content ng-hide" ng-show="main.showInCurrentState('bestimmteArtikel')">
 
             <div class="tile quiz quiz-active">
                 <div class="lowtext">
@@ -154,24 +154,26 @@
                     <span class="bold">Nominativ, Singular</span>
                 </div>
                 <div class="activebig">
-                    d__ schnell_ Auto_
+                    d<span class="bestimmte1">__</span>
+                    schnell<span class="bestimmte2">__</span>
+                    Auto<span class="bestimmte3">__</span>
                 <div>
 
-                <div class="lowtext">pole 1:</div>
+                <div class="lowtext answer-title-separator">pole 1:</div>
                 <div class="multi3">
                     <div class="m3item33first activebig ">der</div>
                     <div class="m3item33 m3selected m3error activebig">die</div>
                     <div class="m3item33 activebig">das</div>
                 </div>
 
-                <div class="lowtext">pole 2:</div>
+                <div class="lowtext answer-title-separator">pole 2:</div>
                 <div class="multi3">
                     <div class="m3item33first activebig">-er</div>
                     <div class="m3item33 activebig">-e</div>
                     <div class="m3item33 activebig">-en</div>
                 </div>
 
-                <div class="lowtext">pole 3:</div>
+                <div class="lowtext answer-title-separator">pole 3:</div>
                 <div class="multi3">
                     <div class="m3item50first m3selected m3ok activebig">[puste]</div>
                     <div class="m3item50 activebig">-s</div>

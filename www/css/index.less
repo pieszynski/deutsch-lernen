@@ -2,7 +2,10 @@
 @main-color: #bf360c;
 @main-color-50alfa: rgba(191, 54, 12, .5);
 @main-color-20alfa: rgba(191, 54, 12, .2);
-@main-backgroind-color: #ccc;
+@main-background-color: #ccc;
+@middle-background-color: #777;
+@light-background-color: #dddddd;
+@white-background-color: #ffffff;
 @notify-color: #afa;
 
 @blueish-color: #aaffff;
@@ -13,7 +16,7 @@
 }
 
 html {
-    background-color: @main-backgroind-color; /* wp8.1 */
+    background-color: @main-background-color; /* wp8.1 */
     min-height: 100%;
     line-height: 24px;
     font-size: 13px;
@@ -34,7 +37,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-color: @main-backgroind-color;
+    background-color: @main-background-color;
 }
 
 input:focus,
@@ -273,7 +276,7 @@ button:focus {
 }
 
 .menu-group-name {
-    border-bottom: 1px solid @main-backgroind-color;
+    border-bottom: 1px solid @main-background-color;
     font-size: 20px;
     margin: 10px;
 }
@@ -302,6 +305,12 @@ button:focus {
     margin-top: 4px;
 }
 
+.answer-title-separator {
+    //border-bottom: 1px solid @main-background-color;
+    //margin: 30px 0 5px 0;
+    //text-decoration: underline;
+}
+
 .multi3 {
     &:before, &:after {
         content: ' ';
@@ -320,7 +329,7 @@ button:focus {
         text-align: center;
     }
     .elemLeftBorder {
-        border-left: 1px solid @main-backgroind-color;
+        border-left: 1px solid @main-background-color;
     }
     .m3selected {
         &:after {
@@ -372,21 +381,48 @@ button:focus {
         .elemFloat();
         width: 49%
     }
-    border-bottom: 1px solid @main-backgroind-color;
-    border-top: 1px solid @main-backgroind-color;
+    //border-bottom: 1px solid @main-background-color;
+    //border-top: 1px solid @main-background-color;
     width: 100%;
 }
 
+.light-gray-content {
+    &:before {
+        color: @middle-background-color;
+        font-size: 13px;
+        margin-left: 7px;
+        position: absolute;
+    }
+}
+.bestimmte1 {
+    .light-gray-content();
+    &:before {
+        content: '1';
+    }
+}
+.bestimmte2 {
+    .light-gray-content();
+    &:before {
+        content: '2';
+    }
+}
+.bestimmte3 {
+    .light-gray-content();
+    &:before {
+        content: '3';
+    }
+}
 
-.activequestion.ng-binding { background-color: #ffffff; } /* wp8.1 */
-.activequestion.ng-binding * { background-color: #ffffff; } /* wp8.1 */
-.activeanswer.ng-binding { background-color: #ffffff; } /* wp8.1 */
-.activeanswer.ng-binding * { background-color: #ffffff; } /* wp8.1 */
-.lowquestion.ng-binding { background-color: #dddddd; } /* wp8.1 */
-.lowquestion.ng-binding * { background-color: #dddddd; } /* wp8.1 */
-.lowanswer.ng-binding { background-color: #dddddd; } /* wp8.1 */
-.lowanswer.ng-binding * { background-color: #dddddd; } /* wp8.1 */
-.activebig.ng-binding { background-color: #ffffff; } /* wp8.1 */
-.activebig.ng-binding * { background-color: #ffffff; } /* wp8.1 */
+
+.activequestion.ng-binding { background-color: @white-background-color; } /* wp8.1 */
+.activequestion.ng-binding * { background-color: @white-background-color; } /* wp8.1 */
+.activeanswer.ng-binding { background-color: @white-background-color; } /* wp8.1 */
+.activeanswer.ng-binding * { background-color: @white-background-color; } /* wp8.1 */
+.lowquestion.ng-binding { background-color: @light-background-color; } /* wp8.1 */
+.lowquestion.ng-binding * { background-color: @light-background-color; } /* wp8.1 */
+.lowanswer.ng-binding { background-color: @light-background-color; } /* wp8.1 */
+.lowanswer.ng-binding * { background-color: @light-background-color; } /* wp8.1 */
+.activebig.ng-binding { background-color: @white-background-color; } /* wp8.1 */
+.activebig.ng-binding * { background-color: @white-background-color; } /* wp8.1 */
 .menu-tile-colors .menu-tile-text.ng-binding { background-color: @main-color; } /* wp8.1 */
 .menu-tile-colors .menu-tile-text.ng-binding * { background-color: @main-color; } /* wp8.1 */

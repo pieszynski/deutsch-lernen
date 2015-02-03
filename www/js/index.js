@@ -59,6 +59,7 @@
         self.menuButtonButtonClass = 'md-menu menu-button menu-button-hidden';
         self.menuButtonTitleClass = '';
 
+        self.currentStateName = 'bestimmteArtikel';
         self.isSearchModeOn = false;
         self.searchValue = '';
         self.searchResults = null;
@@ -412,6 +413,11 @@
 
                 delem.visible = (0 === delem.de.indexOf(keyword));
             }
+        }
+
+        self.showInCurrentState = function (mode) {
+
+            return self.isLoaded && !(self.isSearchModeOn) && mode === this.currentStateName;
         }
 
 
