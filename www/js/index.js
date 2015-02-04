@@ -39,11 +39,16 @@
         self.isLoaded = true;
 
         self.data = window.Data;
+        self.dataBestimmteArtikel = window.DataBestimmteArtikel;
+
         self.learn = [];
+        self.learnBestimmteArtikel = [];
+
         self.btnTexts = ['znaczenie', 'następne'];
         self.applicationModes = [
             {name : 'allIrregularVerbs', selected: true, text : 'Wszystkie czasowniki'},
-            {name : 'starredIrregularVerbs', selected: false, text : 'Tylko oznaczone "<span class="md-star"></span>"'}
+            {name : 'starredIrregularVerbs', selected: false, text : 'Tylko oznaczone "<span class="md-star"></span>"'},
+            {name : 'bestimmteArtikel', selected: false, text : 'Odmiana przymiotnika'}
         ];
         self.currentApplicationMode = self.applicationModes[0];
 
@@ -59,7 +64,6 @@
         self.menuButtonButtonClass = 'md-menu menu-button menu-button-hidden';
         self.menuButtonTitleClass = '';
 
-        self.currentStateName = 'bestimmteArtikel';
         self.isSearchModeOn = false;
         self.searchValue = '';
         self.searchResults = null;
@@ -68,10 +72,12 @@
         self.prev = null;
         self.nextBtn = self.btnTexts[0];
 
+        self.shownBestimmteArtikel = null;
+
         self.cl = function () {
 
             console.log.apply(console, arguments);
-        }
+        };
 
         self.toChevron = function (text) {
 
@@ -80,7 +86,7 @@
 
             var response = text.replace(/>/gi, self.chevron, 'g');
             return response;
-        }
+        };
 
         self.fillLearnData = function () {
 
@@ -102,7 +108,41 @@
 
                 self.learn.push(obj);
             }
-        }
+        };
+
+        self.fillLearnBestimmteArtikelData = function () {
+
+            if (0 < self.learnBestimmteArtikel.length)
+                return false;
+
+            var substs = self.dataBestimmteArtikel.Substantiv,
+                adjs = self.dataBestimmteArtikel.Adjektiv,
+                esub = null,
+                eadj = null,
+                elem = null;
+
+            for (var isub = 0; isub < substs.length; isub++) {
+                for (var iadj = 0; iadj < adjs.length; iadj++) {
+
+                    esub = substs[isub];
+                    eadj = adjs[iadj];
+
+                    // model dla bestimmteArtikel
+                    elem = {
+                        art : esub.art,
+                        subs : esub.de,
+                        adj : eadj.de,
+                        field1 : esub.art,
+                        field2 : '-e',
+                        field3 : ''
+                    };
+
+                    self.learnBestimmteArtikel.push(elem);
+                }
+            }
+
+            return true;
+        };
 
         self.getStarredIndex = function (wordModel) {
 
@@ -251,7 +291,22 @@
             var el = self.learn.splice(elIdx, 1);
 
             return el[0];
-        }
+        };
+
+        self.getNewBestimmteArtikelItem = function () {
+
+            self.fillLearnBestimmteArtikelData();
+
+            if (0 === self.learnBestimmteArtikel.length)
+                return undefined;
+
+            var elIdx = self.learnBestimmteArtikel.length * Math.random();
+            elIdx = Math.floor(elIdx);
+
+            var el = self.learnBestimmteArtikel.splice(elIdx, 1);
+
+            return el[0];
+        };
 
         self.tap = function() {
 
@@ -283,7 +338,91 @@
                 return;
 
             }
-        }
+        };
+
+        self.tapBestimmteArtikel = function (fld, num, val) {
+
+            var getNewElement = undefined === fld;
+
+            // sprawdzenie poprawności wyboru
+            if (self.shownBestimmteArtikel && undefined !== fld) {
+
+                // sprawdzenie wyboru
+                var fElem = self.shownBestimmteArtikel[fld];
+                if (fElem && !fld.ignore) {
+
+                    // wyczyszczenie styli
+                    fElem.aClass = fElem.bClass = fElem.cClass = '';
+
+                    var fClass = '';
+                    if (fElem.correct === val) {
+
+                        fElem.isOk = true;
+                        fClass = 'm3selected m3ok';
+
+                    } else {
+
+                        fElem.isOk = false;
+                        fClass = 'm3error';
+                    }
+
+                    // ustawienie odpowiedniego stylu w CSS
+                    fElem[num + 'Class'] = fClass;
+                }
+
+                // pobieramy nowy element jeśli wszyskie zaznaczenia są w porządku
+                getNewElement = self.shownBestimmteArtikel.field1.isOk
+                    && self.shownBestimmteArtikel.field2.isOk
+                    && self.shownBestimmteArtikel.field3.isOk;
+            }
+
+            // wylosowanie klejnego elementu
+            if (getNewElement) {
+
+                var nitem = self.getNewBestimmteArtikelItem();
+
+                if (undefined === nitem) {
+
+                    self.shownBestimmteArtikel = null;
+                    return;
+                }
+
+                //  klasy: m3selected|m3error|m3ok
+
+                self.shownBestimmteArtikel = {
+                    fall: 'Nominativ, Singular',
+                    artikel: ['der', 'die', 'das'],
+                    endungen: ['-er', '-e', '-es'],
+                    art: 'd',
+                    adj: nitem.adj,
+                    subs: nitem.subs,
+                    field1: {
+                        ignore: false,
+                        correct: nitem.field1,
+                        isOk: false,
+                        aClass: '',
+                        bClass: '',
+                        cClass: ''
+                    },
+                    field2: {
+                        ignore: false,
+                        correct: nitem.field2,
+                        isOk: false,
+                        aClass: '',
+                        bClass: '',
+                        cClass: ''
+                    },
+                    field3: {
+                        ignore: false,
+                        correct: nitem.field3,
+                        isOk: false,
+                        aClass: '',
+                        bClass: '',
+                        cClass: ''
+                    }
+                };
+            }
+        };
 
         self.getApplicationModeByName = function (modeName) {
 
@@ -326,8 +465,18 @@
             if (0 < self.learn.length)
                 self.learn.splice(0, self.learn.length);
 
-            // pobranie pierwszego elementu
-            self.tap();
+            // wykonanie pierwszej akcji dla konkretnych trybów aplikacji
+            if ('allIrregularVerbs' === self.appSettings.applicationMode
+                || 'starredIrregularVerbs' === self.appSettings.applicationMode) {
+
+                // pobranie pierwszego elementu
+                self.tap();
+
+            } else if ('bestimmteArtikel' === self.appSettings.applicationMode) {
+
+                // pobranie pierwszego elementu
+                self.tapBestimmteArtikel();
+            }
 
             // ukrycie paska menu
             if (hideMenuPanel) {
@@ -415,9 +564,30 @@
             }
         }
 
-        self.showInCurrentState = function (mode) {
+        self.showInCurrentMode = function (mode) {
 
-            return self.isLoaded && !(self.isSearchModeOn) && mode === this.currentStateName;
+            if (!self.isLoaded || self.isSearchModeOn) {
+
+                return false;
+            }
+
+            if ('string' === typeof mode) {
+
+                return mode === self.appSettings.applicationMode;
+            }
+
+            if (mode instanceof Array) {
+
+                for (var im = 0; im < mode.length; im++) {
+
+                    if (mode[im] === self.appSettings.applicationMode) {
+
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
 

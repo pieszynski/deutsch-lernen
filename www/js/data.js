@@ -3,6 +3,18 @@ var TestData = [
     {pl: 'naradzać / komentować / omawiać', de: 'besprechen > besprach > hat besprochen'}
 ];
 
+var DataBestimmteArtikel = {
+    Substantiv : [
+        {de: 'Zug', art: 'der'},
+        {de: 'Zeitung', art: 'die'},
+        {de: 'Auto', art: 'das'}
+    ],
+    Adjektiv : [
+        {de: 'kurz'},
+        {de: 'schnell'}
+    ]
+};
+
 var Data = [
     {pl: 'burzyć / niszczyć / zrywać / odrywać', de: 'abreißen > riss ab > hat abgerissen'},
     {pl: 'przypiekać', de: 'anbraten > briet an > hat angebraten'},
