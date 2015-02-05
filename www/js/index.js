@@ -111,6 +111,48 @@
             }
         };
 
+        self.randomizeNounCase = function (nounModel) {
+
+            // STARE
+            //var cases = {
+            //        list: ['Nominativ'/*, 'Genitiv', 'Dativ', 'Akkusativ'*/],
+            //        Nominativ: {
+            //            bestimmteArt: 'd',
+            //            bestimmte: ['der', 'die', 'das'],
+            //            bestimmteEnd: ['-er', '-e', '-es'],
+            //            bestimmteMap: { der: 'der', die: 'die', das: 'das'},
+            //
+            //            unBestimmteArt: '(k)ei',
+            //            unBestimmte: ['(k)ein', '(k)eine', '(k)ein'],
+            //            unBestimmteEnd: ['-er', '-e', '-es'],
+            //            unBestimmteMap: { der: '(k)ein', die: '(k)eine', das: '(k)ein'},
+            //
+            //            ohneArt: null,
+            //            onhe: null,
+            //            ohneEnd: ['-er', '-e', '-es'],
+            //            ohneMap: null
+            //        }
+            //    },
+            //    form = ['Singular'/*, 'Plural'*/],
+            //    caseProbability = Math.random(),
+            //    response = null;
+
+            // * wybieramy przypadek
+            // * wybieramy rodzajnik: określony, nieokreślony, brak
+            // * wybieramy liczbę: pojedyncza czy mnoga
+
+            return {
+                fall: null,
+                artikel: null,
+                endungen: null,
+                art: null,
+                subs: null,
+                field1: null,
+                field2: null,
+                field3: null
+            }
+        };
+
         self.fillLearnBestimmteArtikelData = function () {
 
             if (0 < self.learnBestimmteArtikel.length)
@@ -127,6 +169,8 @@
 
                     esub = substs[isub];
                     eadj = adjs[iadj];
+
+                    self.randomizeNounCase(esubs);
 
                     // model dla bestimmteArtikel
                     elem = {

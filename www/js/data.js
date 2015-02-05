@@ -5,9 +5,9 @@ var TestData = [
 
 var DataBestimmteArtikel = {
     Substantiv : [
-        {de: 'Zug', art: 'der'},
-        {de: 'Zeitung', art: 'die'},
-        {de: 'Auto', art: 'das'}
+        {de: 'Zug',     dep: 'Züge',      art: 'der'},
+        {de: 'Zeitung', dep: 'Zeitungen', art: 'die'},
+        {de: 'Auto',    dep: 'Autos',     art: 'das'}
     ],
     Adjektiv : [
         {de: 'kurz'},
