@@ -32,7 +32,7 @@
         }
     })
 
-    app.controller('mainCtrl', ['$scope', function ($scope) {
+    app.controller('mainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 
         var self = this;
 
@@ -72,6 +72,7 @@
         self.prev = null;
         self.nextBtn = self.btnTexts[0];
 
+        self.bestimmtePopupVisible = 'invisibleElement';
         self.shownBestimmteArtikel = null;
 
         self.cl = function () {
@@ -129,12 +130,18 @@
 
                     // model dla bestimmteArtikel
                     elem = {
-                        art : esub.art,
+                        fall : 'Nominativ, Singular',
+                        artikel : ['der', 'die', 'das'],
+                        endungen : ['-er', '-e', '-es'],
+                        art : 'd',
                         subs : esub.de,
                         adj : eadj.de,
                         field1 : esub.art,
+                        field1Ignore : false,
                         field2 : '-e',
-                        field3 : ''
+                        field2Ignore : false,
+                        field3 : '',
+                        field3Ignore : false
                     };
 
                     self.learnBestimmteArtikel.push(elem);
@@ -374,6 +381,16 @@
                 getNewElement = self.shownBestimmteArtikel.field1.isOk
                     && self.shownBestimmteArtikel.field2.isOk
                     && self.shownBestimmteArtikel.field3.isOk;
+
+                // pokazanie komunikatu o poprawnym wyborze wszystkich elementów
+                if (getNewElement) {
+
+                    self.bestimmtePopupVisible = '';
+                    $timeout(function () {
+
+                        self.bestimmtePopupVisible = 'invisibleElement';
+                    }, 500);
+                }
             }
 
             // wylosowanie klejnego elementu
@@ -390,32 +407,32 @@
                 //  klasy: m3selected|m3error|m3ok
 
                 self.shownBestimmteArtikel = {
-                    fall: 'Nominativ, Singular',
-                    artikel: ['der', 'die', 'das'],
-                    endungen: ['-er', '-e', '-es'],
-                    art: 'd',
+                    fall: nitem.fall,
+                    artikel: nitem.artikel,
+                    endungen: nitem.endungen,
+                    art: nitem.art,
                     adj: nitem.adj,
                     subs: nitem.subs,
                     field1: {
-                        ignore: false,
+                        ignore: nitem.field1Ignore,
                         correct: nitem.field1,
-                        isOk: false,
+                        isOk: nitem.field1Ignore,
                         aClass: '',
                         bClass: '',
                         cClass: ''
                     },
                     field2: {
-                        ignore: false,
+                        ignore: nitem.field2Ignore,
                         correct: nitem.field2,
-                        isOk: false,
+                        isOk: nitem.field2Ignore,
                         aClass: '',
                         bClass: '',
                         cClass: ''
                     },
                     field3: {
-                        ignore: false,
+                        ignore: nitem.field3Ignore,
                         correct: nitem.field3,
-                        isOk: false,
+                        isOk: nitem.field3Ignore,
                         aClass: '',
                         bClass: '',
                         cClass: ''

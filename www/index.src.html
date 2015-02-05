@@ -153,6 +153,7 @@
                     <span>Forma:</span>
                     <span class="bold" ng-bind="main.shownBestimmteArtikel.fall"></span>
                 </div>
+
                 <div class="activebig bestimmte-text">
                     <span ng-bind="main.shownBestimmteArtikel.art"
                           ng-hide="main.shownBestimmteArtikel.field1.ignore"
@@ -169,6 +170,12 @@
                           ></span><span class="bestimmte3"
                                         ng-hide="main.shownBestimmteArtikel.field3.ignore"
                                         >__</span>
+                </div>
+
+                <div>
+                  <div class="bestimmte-notify-ok"
+                       ng-class="main.bestimmtePopupVisible">Ok</div>
+                  <!-- <div class="bestimmte-notify-error">Błąd</div> -->
                 </div>
 
                 <div ng-hide="main.shownBestimmteArtikel.field1.ignore">

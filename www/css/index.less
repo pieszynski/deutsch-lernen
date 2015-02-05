@@ -7,6 +7,9 @@
 @light-background-color: #dddddd;
 @white-background-color: #ffffff;
 @notify-color: #afa;
+@notify-color-text: #007000;
+@error-color: #EA9696;
+@error-color-text: #890000;
 
 @blueish-color: #aaffff;
 
@@ -61,6 +64,10 @@ button:focus {
 
 .bold {
     font-weight: bold;
+}
+
+.invisibleElement {
+    visibility: hidden;
 }
 
 .titlebar {
@@ -395,7 +402,21 @@ button:focus {
     }
 }
 .bestimmte-text {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+.bestimmte-notify-ok {
+    background-color: @notify-color;
+    border: 1px solid @notify-color-text;
+    border-radius: 2px;
+    color: @notify-color-text;
+    text-align: center;
+}
+.bestimmte-notify-error {
+    background-color: @error-color;
+    border: 1px solid @error-color-text;
+    border-radius: 2px;
+    color: @error-color-text;
     text-align: center;
 }
 .bestimmte1 {
