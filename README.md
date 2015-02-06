@@ -15,3 +15,4 @@ Aplikacja do nauki języka niemieckiego
 1) Nowy tryb nauki - końcówki przymiotników przy rodzajniku określonym, nieokreśonym i bez rodzajnika
    * sprawdzanie następuje od razu po kliknięciu - brak dodatkowego przycisku start
    * podmiana rodzajników i końcówek przymiotnika w zależności od przypadku
+   * nietrywialna funkcja losująca odpowiednią formę
