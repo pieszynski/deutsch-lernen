@@ -12,6 +12,94 @@
         <title ng-bind="main.title">Deutsch mit Spaß lernen</title>
     </head>
     <body>
+
+        <script type="text/ng-template" id="bestimmteArtikel.html">
+
+            <div class="tile quiz quiz-active" ng-show="dmsBestimmteMain.shownBestimmteArtikel">
+                <div class="lowtext">
+                    <span>Forma:</span>
+                    <span class="bold" ng-bind="dmsBestimmteMain.shownBestimmteArtikel.fall"></span>
+                </div>
+
+                <div class="activebig bestimmte-text">
+                    <span ng-bind="dmsBestimmteMain.shownBestimmteArtikel.art"
+                          ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field1.ignore"
+                          ></span><span class="bestimmte1"
+                                        ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field1.ignore"
+                                        >__</span>
+                    <span ng-bind="dmsBestimmteMain.shownBestimmteArtikel.adj"
+                          ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field2.ignore"
+                          ></span><span class="bestimmte2"
+                                        ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field2.ignore"
+                                        >__</span>
+                    <span ng-bind="dmsBestimmteMain.shownBestimmteArtikel.subs"
+                          ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field3.ignore"
+                          ></span><span class="bestimmte3"
+                                        ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field3.ignore"
+                                        >__</span>
+                </div>
+
+                <div>
+                  <div class="bestimmte-notify-ok"
+                       ng-class="dmsBestimmteMain.bestimmtePopupVisible">Ok</div>
+                  <!-- <div class="bestimmte-notify-error">Błąd</div> -->
+                </div>
+
+                <div ng-hide="dmsBestimmteMain.shownBestimmteArtikel.field1.ignore">
+                    <div class="lowtext answer-title-separator">pole 1:</div>
+                    <div class="multi3">
+                        <div class="m3item33first activebig"
+                              ng-class="dmsBestimmteMain.shownBestimmteArtikel.field1.aClass"
+                              ng-click="dmsBestimmteMain.tapBestimmteArtikel('field1', 'a', dmsBestimmteMain.shownBestimmteArtikel.artikel[0])"
+                              ng-bind="dmsBestimmteMain.shownBestimmteArtikel.artikel[0]"
+                              ></div>
+                        <div class="m3item33 activebig"
+                              ng-class="dmsBestimmteMain.shownBestimmteArtikel.field1.bClass"
+                              ng-click="dmsBestimmteMain.tapBestimmteArtikel('field1', 'b', dmsBestimmteMain.shownBestimmteArtikel.artikel[1])"
+                              ng-bind="dmsBestimmteMain.shownBestimmteArtikel.artikel[1]"
+                              ></div>
+                        <div class="m3item33 activebig"
+                              ng-class="dmsBestimmteMain.shownBestimmteArtikel.field1.cClass"
+                              ng-click="dmsBestimmteMain.tapBestimmteArtikel('field1', 'c', dmsBestimmteMain.shownBestimmteArtikel.artikel[2])"
+                              ng-bind="dmsBestimmteMain.shownBestimmteArtikel.artikel[2]"
+                              ></div>
+                    </div>
+                </div>
+
+                <div class="lowtext answer-title-separator">pole 2:</div>
+                <div class="multi3">
+                    <div class="m3item33first activebig"
+                          ng-class="dmsBestimmteMain.shownBestimmteArtikel.field2.aClass"
+                          ng-click="dmsBestimmteMain.tapBestimmteArtikel('field2', 'a', dmsBestimmteMain.shownBestimmteArtikel.endungen[0])"
+                          ng-bind="dmsBestimmteMain.shownBestimmteArtikel.endungen[0]"
+                          ></div>
+                    <div class="m3item33 activebig"
+                          ng-class="dmsBestimmteMain.shownBestimmteArtikel.field2.bClass"
+                          ng-click="dmsBestimmteMain.tapBestimmteArtikel('field2', 'b', dmsBestimmteMain.shownBestimmteArtikel.endungen[1])"
+                          ng-bind="dmsBestimmteMain.shownBestimmteArtikel.endungen[1]"
+                          ></div>
+                    <div class="m3item33 activebig"
+                          ng-class="dmsBestimmteMain.shownBestimmteArtikel.field2.cClass"
+                          ng-click="dmsBestimmteMain.tapBestimmteArtikel('field2', 'c', dmsBestimmteMain.shownBestimmteArtikel.endungen[2])"
+                          ng-bind="dmsBestimmteMain.shownBestimmteArtikel.endungen[2]"
+                          ></div>
+                </div>
+
+                <div class="lowtext answer-title-separator">pole 3:</div>
+                <div class="multi3">
+                    <div class="m3item50first activebig"
+                          ng-class="dmsBestimmteMain.shownBestimmteArtikel.field3.aClass"
+                          ng-click="dmsBestimmteMain.tapBestimmteArtikel('field3', 'a', '')"
+                          >[puste]</div>
+                    <div class="m3item50 activebig"
+                          ng-class="dmsBestimmteMain.shownBestimmteArtikel.field3.bClass"
+                          ng-click="dmsBestimmteMain.tapBestimmteArtikel('field3', 'b', '-s')"
+                          >-s</div>
+                </div>
+            </div>
+
+        </script>
+
         <div class="titlebar">
             <div class="titlebar-content" ng-hide="main.isSearchModeOn">
                 <div class="title-text">
@@ -147,90 +235,7 @@
         </div>
 
         <div class="content ng-hide" ng-show="main.showInCurrentMode('bestimmteArtikel')">
-
-            <div class="tile quiz quiz-active" ng-show="main.shownBestimmteArtikel">
-                <div class="lowtext">
-                    <span>Forma:</span>
-                    <span class="bold" ng-bind="main.shownBestimmteArtikel.fall"></span>
-                </div>
-
-                <div class="activebig bestimmte-text">
-                    <span ng-bind="main.shownBestimmteArtikel.art"
-                          ng-hide="main.shownBestimmteArtikel.field1.ignore"
-                          ></span><span class="bestimmte1"
-                                        ng-hide="main.shownBestimmteArtikel.field1.ignore"
-                                        >__</span>
-                    <span ng-bind="main.shownBestimmteArtikel.adj"
-                          ng-hide="main.shownBestimmteArtikel.field2.ignore"
-                          ></span><span class="bestimmte2"
-                                        ng-hide="main.shownBestimmteArtikel.field2.ignore"
-                                        >__</span>
-                    <span ng-bind="main.shownBestimmteArtikel.subs"
-                          ng-hide="main.shownBestimmteArtikel.field3.ignore"
-                          ></span><span class="bestimmte3"
-                                        ng-hide="main.shownBestimmteArtikel.field3.ignore"
-                                        >__</span>
-                </div>
-
-                <div>
-                  <div class="bestimmte-notify-ok"
-                       ng-class="main.bestimmtePopupVisible">Ok</div>
-                  <!-- <div class="bestimmte-notify-error">Błąd</div> -->
-                </div>
-
-                <div ng-hide="main.shownBestimmteArtikel.field1.ignore">
-                    <div class="lowtext answer-title-separator">pole 1:</div>
-                    <div class="multi3">
-                        <div class="m3item33first activebig"
-                              ng-class="main.shownBestimmteArtikel.field1.aClass"
-                              ng-click="main.tapBestimmteArtikel('field1', 'a', main.shownBestimmteArtikel.artikel[0])"
-                              ng-bind="main.shownBestimmteArtikel.artikel[0]"
-                              ></div>
-                        <div class="m3item33 activebig"
-                              ng-class="main.shownBestimmteArtikel.field1.bClass"
-                              ng-click="main.tapBestimmteArtikel('field1', 'b', main.shownBestimmteArtikel.artikel[1])"
-                              ng-bind="main.shownBestimmteArtikel.artikel[1]"
-                              ></div>
-                        <div class="m3item33 activebig"
-                              ng-class="main.shownBestimmteArtikel.field1.cClass"
-                              ng-click="main.tapBestimmteArtikel('field1', 'c', main.shownBestimmteArtikel.artikel[2])"
-                              ng-bind="main.shownBestimmteArtikel.artikel[2]"
-                              ></div>
-                    </div>
-                </div>
-
-                <div class="lowtext answer-title-separator">pole 2:</div>
-                <div class="multi3">
-                    <div class="m3item33first activebig"
-                          ng-class="main.shownBestimmteArtikel.field2.aClass"
-                          ng-click="main.tapBestimmteArtikel('field2', 'a', main.shownBestimmteArtikel.endungen[0])"
-                          ng-bind="main.shownBestimmteArtikel.endungen[0]"
-                          ></div>
-                    <div class="m3item33 activebig"
-                          ng-class="main.shownBestimmteArtikel.field2.bClass"
-                          ng-click="main.tapBestimmteArtikel('field2', 'b', main.shownBestimmteArtikel.endungen[1])"
-                          ng-bind="main.shownBestimmteArtikel.endungen[1]"
-                          ></div>
-                    <div class="m3item33 activebig"
-                          ng-class="main.shownBestimmteArtikel.field2.cClass"
-                          ng-click="main.tapBestimmteArtikel('field2', 'c', main.shownBestimmteArtikel.endungen[2])"
-                          ng-bind="main.shownBestimmteArtikel.endungen[2]"
-                          ></div>
-                </div>
-
-                <div class="lowtext answer-title-separator">pole 3:</div>
-                <div class="multi3">
-                    <div class="m3item50first activebig"
-                          ng-class="main.shownBestimmteArtikel.field3.aClass"
-                          ng-click="main.tapBestimmteArtikel('field3', 'a', '')"
-                          >[puste]</div>
-                    <div class="m3item50 activebig"
-                          ng-class="main.shownBestimmteArtikel.field3.bClass"
-                          ng-click="main.tapBestimmteArtikel('field3', 'b', '-s')"
-                          >-s</div>
-                </div>
-            </div>
-
+          <bestimmte-artikel />
         </div>
 
         <script type="text/javascript" src="js/build-winstore-jscompat.min.js"></script>

@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         },
         concat : {
             dataAndIndex : {
-                src : ['www/js/data.js', 'www/js/index.js'],
+                src : ['www/js/data.js', 'www/js/bestimmteArtikel.js', 'www/js/index.js'],
                 dest : 'www/js/build/source.js'
             },
             vendors : {
